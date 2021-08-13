@@ -10,7 +10,7 @@
 -var productListColor=[{name:"Xanh cây", color:"green"}, {name:"Đỏ cam", color:"Orange"}, {name:"Tím", color:"violet"}, {name:"Xanh trời", color:"blue"}, {name:"Vàng", color:"yellow"}, {name:"Hồng", color:"pink"}];
 -var floatingproduct=[{name:"Cây Chân Chim", isNew:true, src:"./images/spx2-4.png", star:1.5, price:"300.000", pricesale:"250.000", status:"none", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Cọ Ta", isNew:"none", src:"./images/spx2-11.png", star:4, price:"200.000", pricesale:"100.000", status:"none", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Dừa Nhỏ", isNew:"none", src:"./images/spx2-6.png", star:5, price:"300.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Danh Dự", isNew:true, src:"./images/spx2-5.png", star:5, price:"300.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Đa Búp Đỏ", isNew:true, src:"./images/spx2-15.png", star:4.5, price:"300.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Đa Búp Đỏ", isNew:"none", src:"./images/spx2-3.png", star:5, price:"500.000", pricesale:"450.000", status:"show"}, {name:"Cây Cọ Ta", isNew:"none", src:"./images/spx2-11.png", star:4, price:"200.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Cọ Ta", isNew:"none", src:"./images/spx2-11.png", star:4, price:"200.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}];
 
-mixin dropdownItem(name="Action", url="index.html")
+mixin dropdownItem(name = "Action", url = "index.html")
     a(class="dropdown-item py-3", href=url)=name
     
 mixin renderListIcon()
@@ -20,7 +20,7 @@ mixin renderListIcon()
                 a(href="", class="icon-link icon-link__"+val.name)
                     i(class=val.url)
 
-mixin renderHeaderNavbar(name="Home", url="index.html", isActive=true, isDropDown=false, dropdownList=[{name:"", url:""}])
+mixin renderHeaderNavbar(name = "Home", url = "index.html", isActive = true, isDropDown = false, dropdownList=[{name:"", url:""}])
     if(isActive)
         li(class="nav-item active mr-4 py-3")
             a(class="nav-link text-white", href=url)=name
@@ -71,17 +71,17 @@ mixin renderPagination(totalPage=4)
             li(class="page-item text-center mr-3 next-item")
                 a(class="page-link rounded-0", href="#") Trang cuối
 
-mixin renderfloatingProduct(name="Cây Chân Chim", isNew=true, src="./images/spx2-4.png", star=5, price="300.000", pricesale="250.000", status="none")
+mixin renderfloatingProduct(name = "Cây Chân Chim", isNew = true, src = "./images/spx2-4.png", star = 5, price = "300.000", pricesale = "250.000", status = "none")
     div(class="card floating-product__card mt-2 mb-3")
         div(class="floating-product__image")
             img(src=src,class="card-img-top", alt="card1")
-            if(isNew==true)
+            if(isNew == true)
                 div(class="status__product status-new text-white") 
                     span NEW
-            else if(isNew==false)
+            else if(isNew == false)
                 div(class="status__product status-sale text-white") 
                     span -50%
-            else if(isNew=="none")
+            else if(isNew == "none")
                 div(class="status__product status-sale text-white d-none")
             div(class="floating-product__overlay")
                 div(class="button-group w-100 d-flex justify-content-center align-items-center")
@@ -97,27 +97,27 @@ mixin renderfloatingProduct(name="Cây Chân Chim", isNew=true, src="./images/sp
                         li(class="rate-item mr-1")
                             i(class="fas fa-star")
                         - count++;
-                        if(count==star)
+                        if(count == star)
                             li(class="rate-item mr-1")
                                 i(class="fas fa-star-half")
             div(class="card-price mt-3")
                 span(class="price-sale mr-3")=price+" "+"đ"
                 span(class="price-cost text-muted")=pricesale+" "+"đ"
 
-mixin renderfloatingProductGrid(product="new")
+mixin renderfloatingProductGrid(product = "new")
     each val in floatingproduct
-        if(product=="new")
+        if(product == "new")
             div(class="col-12 col-md-6 col-lg-3")
                 div(class="card floating-product__card mt-2 mb-3")
                     .floating-product__image
                         img(src=val.src, class="card-img-top", alt="card1")
-                        if(val.isNew==true)
+                        if(val.isNew == true)
                             div(class="status__product status-new text-white") 
                                 span NEW
-                        else if(val.isNew==false)
+                        else if(val.isNew == false)
                             div(class="status__product status-sale text-white") 
                                 span -50%
-                        else if(val.isNew=="none")
+                        else if(val.isNew == "none")
                             div(class="status__product status-sale text-white d-none")
                         .floating-product__overlay
                             div(class="button-group w-100 d-flex justify-content-center align-items-center")
@@ -133,24 +133,24 @@ mixin renderfloatingProductGrid(product="new")
                                     li(Class="rate-item mr-1")
                                         i(class="fas fa-star")
                                     - count++;
-                                    if(count==val.star)
+                                    if(count == val.star)
                                         li(Class="rate-item mr-1")
                                             i(class="fas fa-star-half")
                         div(class="card-price mt-3")
                             span(class="price-sale mr-3")=val.price+" "+"đ"
                             span(class="price-cost text-muted")=val.pricesale+" "+"đ"
-        if(product=="sale")
+        if(product == "sale")
             div(class="col-12 col-md-6 col-lg-4")
                 div(class="card floating-product__card mt-2 mb-3")
                     .floating-product__image
                         img(src=val.src, class="card-img-top", alt="card1")
-                        if(val.isNew==true)
+                        if(val.isNew == true)
                             div(class="status__product status-new text-white") 
                                 span NEW
-                        else if(val.isNew==false)
+                        else if(val.isNew == false)
                             div(class="status__product status-sale text-white") 
                                 span -50%
-                        else if(val.isNew=="none")
+                        else if(val.isNew == "none")
                             div(class="status__product status-sale text-white d-none")
                         div.floating-product__overlay
                             div(class="button-group w-100 d-flex justify-content-center align-items-center")
@@ -166,13 +166,13 @@ mixin renderfloatingProductGrid(product="new")
                                     li(Class="rate-item mr-1")
                                         i(class="fas fa-star")
                                     - count++;
-                                    if(count==val.star)
+                                    if(count == val.star)
                                         li(Class="rate-item mr-1")
                                             i(class="fas fa-star-half")
                         div(class="card-price mt-3")
                             span(class="price-sale mr-3")=val.price+" "+"đ"
                             span(class="price-cost text-muted")=val.pricesale+" "+"đ"
-        if(product=="more")
+        if(product == "more")
             li(class="hot-product-item mt-3")
                 a(href="productdetail.html") 
                     div(class="card p-3")
@@ -189,11 +189,12 @@ mixin renderfloatingProductGrid(product="new")
                                                 li(Class="rate-item mr-1")
                                                     i(class="fas fa-star")
                                                 - count++;
-                                                if(count==val.star)
+                                                if(count == val.star)
                                                     li(Class="rate-item mr-1")
                                                         i(class="fas fa-star-half")
                                     div(class="card-price mt-3")
                                         span(class="price-sale mr-3")=val.price+" "+"đ"
+                                        
 mixin renderfloatingProductList()
     each val in floatingproduct
         div(class="col-12")
@@ -201,7 +202,7 @@ mixin renderfloatingProductList()
                 div(class="card p-3")
                     div(class="row no-gutters")
                         div(class="col-md-5")
-                            img(src=val.src, alt="...", class="h-100")
+                            img(src=val.src, alt="card1", class="h-100")
                         div(class="col-md-7")
                             .card-body
                                 h5(class="card-title text-left")=val.name
@@ -212,7 +213,7 @@ mixin renderfloatingProductList()
                                             li(Class="rate-item mr-1")
                                                 i(class="fas fa-star")
                                             - count++;
-                                            if(count==val.star)
+                                            if(count == val.star)
                                                 li(Class="rate-item mr-1")
                                                     i(class="fas fa-star-half")
                                 div(class="card-description mt-3")
@@ -223,32 +224,65 @@ mixin renderfloatingProductList()
                                     a(href="productdetail.html", class="btn btn-full rounded-pill") MUA NGAY
                                     +renderbuttonwithicon()
 
-- var newslist=[{title:"15 trang thiết kế phòng ngủ đẹp vạn người mê", url:"news1.png", des:"Cùng Sài Gòn Hoa tìm hiểu một vài xu hướng thiết kế sân vườn được ưa chuộng nhất hiện nay nhé! Kết hợp hàng rào"}, {title:"Tạo tiểu cảnh góc sân cho nhà phố, biệt thự đẹp", url:"news2.png", des:"Khi bước từ ngoài vào ngõ hay từ trong nhà đi ra, góc sân vẫn luôn là điểm nhìn đầu tiên của chúng ta"}, {title:"Cách bố trí hoa chậu trước cửa ấn tượng", url:"news3.png", des:"Như thể hiện sự thân thiện cũng như sự hiếu khách của gia chủ, phần không gian trước cửa"}];
+-var newslist=[{title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách", image:"news1.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}, {title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách 2", image:"news2.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}, {title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách 3", image:"news3.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}, {title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách 4", image:"news1.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}, {title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách 5", image:"news1.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}];
 
-mixin renderNews()
-    each val in newslist
-        div(class="col-12 col-lg-4")
-            div(class="card mt-3")
-                .card-img
-                    img(src="./images/"+val.url, class="card-img-top", alt="...")
-                .card-body
-                    time(class="time text-muted")=val.time
-                    span(class="card-title d-block mt-3")=val.title
-                    p(class="card-des text-muted")=val.des
-                    a(href="",class="d-block mt-3 news-link text-dark") Đọc tiếp ...
+mixin renderNews(display = "grid", count = 3)
+    if(display == "grid")
+        each val, index in newslist
+            if(index < count)
+                div(class="col-12 col-lg-4")
+                    div(class="card mt-3")
+                        .card-img
+                            img(src="./images/"+val.image, class="card-img-top", alt=val.image)
+                        .card-body
+                            time(class="time text-muted")=val.date
+                            span(class="card-title d-block mt-3")=val.title
+                            p(class="card-des text-muted")=val.des
+                            a(href="newsdetail.html",class="d-block mt-3 news-link text-dark") Đọc tiếp ...
+    if(display == "sidebar")
+        each val, index in newslist
+            if(index < count)
+                li(class="news-item mt-3")
+                    a(href="newsdetail.html") 
+                        div(class="card py-3")
+                            div(class="row no-gutters")
+                                div(class="col-md-4")
+                                    img(src="./images/"+val.image, alt=val.image, class="h-100")
+                                div(class="col-md-8")
+                                    .card-body.pt-0.pr-0
+                                        h5.card-title=val.title 
+    if(display == "list")
+        each val, index in newslist
+            if(index < count)
+                .news-content__item.mb-5 
+                    h5.news-content__title=val.title
+                    .button-group 
+                        div.inline-block 
+                            i(class="far fa-calendar-minus")
+                            time=val.date
+                        div.inline-block
+                            i(class="far fa-clock")
+                            time=val.time
+                        div.inline-block
+                            i(class="far fa-comment-dots")
+                            span=val.comment
+                    .news-content__img 
+                        img(src="./images/"+val.image, alt=val.image)
+                    .news-content__des 
+                        p=val.des
 
-mixin renderInput(type="email", placeholder="Nhập email của bạn vào đây", button=true)
+mixin renderInput(type = "email", placeholder = "Nhập email của bạn vào đây", button = true)
     .input-component
         .input-group
             input(class="form-control px-4", type=type, placeholder=placeholder)
-            if(button==true)
+            if(button == true)
                 div.input-group-append
                     button(type="button", class="px-4 text-white btn")
                         i(class="fas fa-paper-plane")
 
 - var productcategorylist=[{name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}, {name:"Cây chậu treo 3",  url:"index.html"}]}, {name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}]}, {name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}]}, {name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}]}, {name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}]}];
 
-mixin renderProductCategory(list=productcategorylist)
+mixin renderProductCategory(list = productcategorylist)
     ul.product-category__list
         each val in list
             li(class="product-category__item mt-3 py-3")
@@ -258,7 +292,7 @@ mixin renderProductCategory(list=productcategorylist)
                     if(val.list.length>1)
                         span="("+val.list.length+")"
                     each value in val.list
-                        if(list.length>0) 
+                        if(list.length > 0) 
                             div(class="dropdownCategory pl-3 pt-2")
                                 ul.dropdownCategory__list
                                     li(class="dropdownCategory__item py-2")
@@ -267,7 +301,8 @@ mixin renderProductCategory(list=productcategorylist)
                                             span=value.name
 
 -var listprice=[{start:"200.000", end:"400.000"}, {start:"400.000", end:"600.000"}, {start:"600.000", end:"800.000"}, {start:"800.000", end:"1.000.000"}, {start:"1.000.000", end:"2.000.000"}];
-mixin renderFindPrice(list=listprice)
+
+mixin renderFindPrice(list = listprice)
     ul.product-category__list
         each val in list
             li(class="product-category__item mt-3 py-3")
@@ -283,15 +318,24 @@ mixin renderProductListColor()
 
 - var selectList=[{name:"Tên sản phẩm", value:"byname"}, {name:"Giá tăng dần", value:"bypriceup"}, {name:"Giá giảm dần", value:"bypricedown"}];
 
-mixin renderSelectForm(title="Sắp xếp theo", id="productlist-select", isCustom=false, number=15)
+mixin renderSelectForm(title = "Sắp xếp theo", id = "productlist-select", isCustom = false, number = 15)
     div(class="d-flex align-items-center input-box")
         label(for=id, class="my-1 mr-2")=title
         select(class="form-control my-1", id=id)
-            if(isCustom==false)
+            if(isCustom == false)
                 each val in selectList
                     option(value=val.value)=val.name
             else
                 - var temp=1;
-                while temp<=number
+                while temp <= number
                     option(value=temp)=temp
                     - temp++
+
+- var taglist=["Cây văn phòng", "Cây phát lộc", "Cây xanh", "Cây trang trí", "Cây", "Plants", "Sức khoẻ", "Quà tặng", "Lưu niệm"];
+
+mixin renderBlogTag(list = taglist)
+    each val, index in list 
+        if(index == 0)
+            a.btn.btn-full.mr-3.mt-3(href="")=val
+        else
+            a.btn.btn-white.mr-3.mt-3(href="")=val

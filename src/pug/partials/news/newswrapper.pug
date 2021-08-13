@@ -1,0 +1,23 @@
+section(class="productnews-wrapper py-4")
+    .container
+        +renderBreadCrumb([{name:"Trang chủ", url:"index.html"}, {name:"Tin tức", url:"news.html"}])
+        .row
+            div(class="col-12 col-md-4 col-lg-3")
+                div(class="product-list__sidebar mt-4")
+                    .row
+                        div(class="col-12")
+                            .product__category
+                                div(class="section__title mb-4 pb-3")
+                                    h2 Danh mục sản phẩm
+                                +renderProductCategory
+                        div(class="col-12")
+                            div(class="product__category mt-5")
+                                div(class="section__title mb-4 pb-3")
+                                    h2 Tin tức nổi bật
+                                ul
+                                    +renderNews("sidebar",5)
+                        div(class="col-12")
+                            div(class="product__category mt-5")
+                                div(class="section__title mb-4 pb-3")
+                                    h2 Blog tag
+                                +renderBlogTag
