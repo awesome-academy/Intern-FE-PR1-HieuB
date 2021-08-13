@@ -1,0 +1,8 @@
+- var iconList = [{name: 'facebook',url: "fab fa-facebook-f"},{name: "twitter",url:"fab fa-twitter"},{name: "youtube",url: "fab fa-youtube"},{name: "instagram",url: "fab fa-instagram"}];
+
+mixin renderListIcon()
+    ul(class="d-flex align-items-center")
+        each val in iconList
+            li(class="mr-3") 
+                a(href="", class="icon-link icon-link__"+val.name)
+                    i(class=val.url)
