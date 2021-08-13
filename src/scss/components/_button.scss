@@ -3,3 +3,16 @@
     background-color: $primary-color;
     color: white;
 }
+
+.btn-with-icon {
+    border: solid 1px $gray-color-light;
+    width: 4rem;
+    height: 4rem;
+    transition: 0.5s;
+
+    &:hover {
+        color: white;
+        background-color: $primary-color;
+        transition: 0.5s;
+    }
+}
