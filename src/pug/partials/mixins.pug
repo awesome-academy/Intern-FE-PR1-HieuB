@@ -35,7 +35,7 @@ mixin renderHeaderNavbar(name="Home", url="index.html", isActive=true, isDropDow
 
 mixin renderListFooter()
     each value in footerListInfo
-        div(class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3")
+        div(class="col-12 col-md-6 col-lg-3")
             div(class="footer__list-box py-2")
                 h2(class="list-box__title")=value.title 
                 ul(class="list-box__list pt-3")
@@ -106,7 +106,7 @@ mixin renderfloatingProduct(name="Cây Chân Chim", isNew=true, src="./images/sp
 mixin renderfloatingProductGrid(product="new")
     each val in floatingproduct
         if(product=="new")
-            div(class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3")
+            div(class="col-12 col-md-6 col-lg-3")
                 div(class="card floating-product__card mt-2 mb-3")
                     .floating-product__image
                         img(src=val.src, class="card-img-top", alt="card1")
@@ -139,7 +139,7 @@ mixin renderfloatingProductGrid(product="new")
                             span(class="price-sale mr-3")=val.price+" "+"đ"
                             span(class="price-cost text-muted")=val.pricesale+" "+"đ"
         if(product=="sale")
-            div(class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4")
+            div(class="col-12 col-md-6 col-lg-4")
                 div(class="card floating-product__card mt-2 mb-3")
                     .floating-product__image
                         img(src=val.src, class="card-img-top", alt="card1")
@@ -194,7 +194,7 @@ mixin renderfloatingProductGrid(product="new")
                                     span(class="price-sale mr-3")=val.price+" "+"đ"
 mixin renderfloatingProductList()
     each val in floatingproduct
-        div(class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12")
+        div(class="col-12")
             div(class="productlist__d-list floating-product__card mt-3")
                 div(class="card p-3")
                     div(class="row no-gutters")
@@ -221,17 +221,11 @@ mixin renderfloatingProductList()
                                     a(href="productdetail.html", class="btn btn-full rounded-pill") MUA NGAY
                                     +renderbuttonwithicon()
 
--var iconbtn=[{name:"search", url:"fas fa-search"}, {name:"like", url:"fas fa-heart"}];
-mixin renderbuttonwithicon(list=iconbtn)
-    each val in list
-        a(class="btn ml-3 btn-with-icon rounded-circle d-flex align-items-center justify-content-center")
-            i(class=val.url)
-
 - var newslist=[{title:"15 trang thiết kế phòng ngủ đẹp vạn người mê", url:"news1.png", des:"Cùng Sài Gòn Hoa tìm hiểu một vài xu hướng thiết kế sân vườn được ưa chuộng nhất hiện nay nhé! Kết hợp hàng rào"}, {title:"Tạo tiểu cảnh góc sân cho nhà phố, biệt thự đẹp", url:"news2.png", des:"Khi bước từ ngoài vào ngõ hay từ trong nhà đi ra, góc sân vẫn luôn là điểm nhìn đầu tiên của chúng ta"}, {title:"Cách bố trí hoa chậu trước cửa ấn tượng", url:"news3.png", des:"Như thể hiện sự thân thiện cũng như sự hiếu khách của gia chủ, phần không gian trước cửa"}];
 
 mixin renderNews()
     each val in newslist
-        div(class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4")
+        div(class="col-12 col-lg-4")
             div(class="card mt-3")
                 .card-img
                     img(src="./images/"+val.url, class="card-img-top", alt="...")
@@ -241,13 +235,14 @@ mixin renderNews()
                     p(class="card-des text-muted")=val.des
                     a(href="",class="d-block mt-3 news-link text-dark") Đọc tiếp ...
 
-mixin renderInput(type="email", placeholder="Nhập email của bạn vào đây")
+mixin renderInput(type="email", placeholder="Nhập email của bạn vào đây", button=true)
     .input-component
         .input-group
             input(class="form-control px-4", type=type, placeholder=placeholder)
-            div.input-group-append
-                button(type="button", class="px-4 text-white btn")
-                    i(class="fas fa-paper-plane")
+            if(button==true)
+                div.input-group-append
+                    button(type="button", class="px-4 text-white btn")
+                        i(class="fas fa-paper-plane")
 
 - var productcategorylist=[{name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}, {name:"Cây chậu treo 3",  url:"index.html"}]}, {name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}]}, {name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}]}, {name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}]}, {name:"Cây chậu treo", url:"index.html", list:[{name:"Cây chậu treo 1",  url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}]}];
 
@@ -298,5 +293,3 @@ mixin renderSelectForm(title="Sắp xếp theo", id="productlist-select", isCust
                 while temp<=number
                     option(value=temp)=temp
                     - temp++
-
-
