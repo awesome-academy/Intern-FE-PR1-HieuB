@@ -11,4 +11,25 @@ section.productnews-wrapper {
             }
         }
     }
+
+    .news-content__item {
+        .news-content__title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .button-group {
+            font-size: 1.5rem;
+            color: $gray-color;
+
+            i {
+                color: $primary-color;
+            }
+        }
+
+        .news-content__des {
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
+    }
 }

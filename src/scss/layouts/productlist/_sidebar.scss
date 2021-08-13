@@ -4,15 +4,14 @@
             color: $gray-color;
             cursor: pointer;
             border-bottom: solid 1px $gray-color-light;
+            font-size: 1.5rem;
 
             &:hover {
-                .dropdownCategory {
+                .dropdown-category {
                     display: block;
                     animation: fadeIn 1s;
                 }
             }
-
-            font-size: 1.5rem;
 
             a {
                 color: $gray-color;
@@ -22,10 +21,10 @@
                 font-size: 1.1rem;
             }
 
-            .dropdownCategory {
+            .dropdown-category {
                 display: none;
 
-                .dropdownCategory__list {
+                .dropdown-category__list {
                     font-size: 1.3rem;
                     i {
                         font-size: 0.7rem;
