@@ -1,0 +1,37 @@
+extends ../base/default-layout
+
+block vars
+	-title = 'Hello everyone'
+	-bodyClass = 'register'
+	-des='Đây là project 1 register'
+
+block container
+	section.register.py-4
+		.container 
+			+breadCrumb([{name:"Trang chủ", url:"index.html"}, {name:"Đăng ký", url:"register.html"}])
+			.section__title.mb-4.py-3
+				h2 THÔNG TIN CÁ NHÂN
+			form
+				.row 
+					.col-12.col-md-6
+						+inputWithLabel("text", "", "inputName", "Họ và tên: ", true)
+					.col-12.col-md-6
+						+inputWithLabel("tel", "", "inputTel", "Số điện thoại: ", true) 
+					.col-12.col-md-6
+						+inputWithLabel("email", "", "inputEmail", "Địa chỉ email: ", true)
+					.col-12.col-md-6
+						+inputWithLabel("text", "", "inputWebsite", "Website của bạn: ", true)
+					.col-12
+						.d-flex.align-items-center.checbox-box 
+							+inputWithLabel("checkbox", "", "checkboxInput", "Đăng ký nhận thông tin qua email")
+				.section__title.mb-4.py-3.pt-5
+					h2 THÔNG TIN CÁ NHÂN
+				.row 
+					.col-12.col-md-6
+						+inputWithLabel("password", "", "inputPassword", "Mật khẩu: ", true)
+					.col-12.col-md-6
+						+inputWithLabel("password", "", "inputConfirmPassword", "Nhập lại mật khẩu: ", true) 
+					.col-12 
+						.form-group.mt-4 
+							a.btn.btn-white.rounded-pill.mr-4(href="") QUAY LẠI 
+							a.btn.btn-full.rounded-pill(href="") ĐĂNG KÝ
