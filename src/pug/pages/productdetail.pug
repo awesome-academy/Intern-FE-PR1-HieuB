@@ -1,0 +1,14 @@
+extends ../layouts/default-layout
+block mixins
+	include ../partials/mixins
+	include ../partials/breadcrumb
+	include ../partials/carouselwithimage
+	include ../partials/button
+
+block vars
+	-title = 'Hello everyone'
+	-bodyClass = 'productdetail'
+	-des='Đây là project 1 productdetail'
+
+block container
+	include ../partials/productdetail/productdetailwrapper

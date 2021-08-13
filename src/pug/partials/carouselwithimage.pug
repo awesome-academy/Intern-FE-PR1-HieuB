@@ -1,0 +1,20 @@
+- var listproductdetail={name:"carouseldetail", list:["spx2-1.png", "spx2-2.png", "spx2-3.png", "spx2-4.png"]};
+
+mixin renderCarouselImage(list=listproductdetail)
+    div(id=list.name, class="carousel position-static slide")
+        .carousel-inner
+            each val, index in list.list
+                if(index==0)
+                    div(class="carousel-item active")
+                        img(src="./images/"+val, class="d-block w-100", alt=val)
+                else 
+                    .carousel-item
+                        img(src="./images/"+val, class="d-block w-100", alt=val)
+        div(class="carousel-indicators position-static mt-3 w-100 ml-0 mr-0")
+            .row(class="justify-content-around")
+                each val, index in list.list
+                    div(class="col-3 px-4")
+                        if(index==0)
+                            img(src="./images/"+val, data-target="#"+list.name, data-slide-to=index, class="active", alt="val")
+                        else 
+                            img(src="./images/"+val, alt="val", data-target="#"+list.name, data-slide-to=index)
