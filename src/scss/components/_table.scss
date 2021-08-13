@@ -1,0 +1,36 @@
+table.table {
+    thead {
+        tr {
+            th {
+                background-color: $primary-color;
+                font-size: 1.6rem;
+                font-weight: bold;
+                min-width: 10rem;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            th.th-img {
+                max-width: 10rem;
+            }
+
+            td,
+            i {
+                font-size: 1.6rem;
+                color: $gray-color;
+
+                &.td-name {
+                    color: $primary-color;
+                    font-weight: bold;
+                }
+
+                span.border {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+}

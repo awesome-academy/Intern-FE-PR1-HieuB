@@ -1,0 +1,18 @@
+section.cart-wrapper {
+    .cart-title {
+        h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: $primary-color;
+        }
+    }
+
+    @include minWidth($sm) {
+        .button-group {
+            justify-content: flex-end !important;
+            a.btn {
+                margin-left: 1.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+-var listColumn=["HÌNH ẢNH", "TÊN SẢN PHẨM", "ĐƠN GIÁ", "SỐ LƯỢNG", "THÀNH TIỀN", "XOÁ"]; 
+
+mixin renderTable(listproduct=[{name:"CÂY VĂN PHÒNG", image:"spx2-1.png", count: 1, price:270.000}, {name:"CÂY VĂN PHÒNG", image:"spx2-1.png", count: 1, price:270.000}, {name:"CÂY VĂN PHÒNG", image:"spx2-1.png", count: 1, price:270.000}])
+    .table-responsive
+        table(class="table table-bordered")
+            thead
+                tr
+                    each val in listColumn
+                        th(class="text-white text-center align-middle" ,scope="col")=val
+            tbody
+                each value in listproduct
+                    tr
+                        th.th-img.align-middle(scope="row")
+                            img(src="./images/"+value.image, alt="value.image")
+                        td.align-middle.text-center.td-name=value.name     
+                        td.align-middle.text-center=value.price*1000+" đ"
+                        td.align-middle.text-center
+                            div.d-flex.justify-content-center
+                                span.border(class="d-flex align-items-center justify-content-center")=value.count
+                        td.align-middle.text-center=value.price*value.count*1000+" đ"
+                        td.align-middle.text-center
+                            button(class="btn")
+                                i(class="fas fa-trash-alt")
