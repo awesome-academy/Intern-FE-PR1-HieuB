@@ -1,4 +1,5 @@
--var listColumn=["HÌNH ẢNH", "TÊN SẢN PHẨM", "ĐƠN GIÁ", "SỐ LƯỢNG", "THÀNH TIỀN", "XOÁ"]; 
+-var listColumn=["HÌNH ẢNH", "TÊN SẢN PHẨM", "ĐƠN GIÁ", "SỐ LƯỢNG", "THÀNH TIỀN", "XOÁ"];
+-var listFooter=["TỔNG PHẢI THANH TOÁN"];
 
 mixin renderTable(listproduct=[{name:"CÂY VĂN PHÒNG", image:"spx2-1.png", count: 1, price:270.000}, {name:"CÂY VĂN PHÒNG", image:"spx2-1.png", count: 1, price:270.000}, {name:"CÂY VĂN PHÒNG", image:"spx2-1.png", count: 1, price:270.000}])
     .table-responsive
@@ -21,3 +22,20 @@ mixin renderTable(listproduct=[{name:"CÂY VĂN PHÒNG", image:"spx2-1.png", cou
                         td.align-middle.text-center
                             button(class="btn")
                                 i(class="fas fa-trash-alt")
+
+mixin renderTableTotalMoney(totalPrice=270.000)
+    .table-responsive
+        table(class="table table-bordered")
+            tbody
+                tr
+                    td.align-middle.text-center TỔNG TIỀN CHƯA THUẾ  
+                    td.align-middle.text-center=totalPrice*1000
+                tr
+                    td.align-middle.text-center THUẾ (VAT 10%)
+                    -var vat=totalPrice/100*10*1000
+                    td.align-middle.text-center=vat
+            tfoot
+                tr
+                    each val in listFooter
+                        th.text-white(class="align-middle text-center" ,scope="col")=val
+                        th.text-white(class="align-middle text-center" ,scope="col")=totalPrice*1000+vat
