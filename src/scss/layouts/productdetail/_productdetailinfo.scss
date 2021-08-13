@@ -1,0 +1,22 @@
+section.productdetail-info {
+    .nav-tabs {
+        a.nav-link {
+            font-size: 1.6rem;
+            color: $bg-dark;
+            min-width: 25%;
+            width: fit-content;
+
+            &.active {
+                border-top: solid 2px $bg-dark;
+                color: $primary-color;
+            }
+        }
+    }
+
+    .tab-content {
+        .tab-pane-item {
+            font-size: 1.5rem;
+            color: $gray-color;
+        }
+    }
+}

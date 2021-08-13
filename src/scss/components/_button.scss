@@ -16,3 +16,74 @@
         transition: 0.5s;
     }
 }
+
+.btn-item {
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.3rem;
+    font-size: 1.4rem;
+    color: white;
+    border: solid 1px $bg-dark;
+
+    &.btn-facebook {
+        background-color: $color-facebook;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: white;
+            color: $color-facebook;
+            transition: 0.5s;
+        }
+    }
+
+    &.btn-google-plus {
+        color: $color-google;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: $color-google;
+            color: white;
+            transition: 0.5s;
+        }
+    }
+
+    &.btn-twitter {
+        background-color: $color-twitter;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: white;
+            color: $color-twitter;
+            transition: 0.5s;
+        }
+    }
+
+    &.btn-share {
+        background-color: $color-share;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: white;
+            color: $color-share;
+            transition: 0.5s;
+        }
+    }
+}
+
+.count-page {
+    height: 100%;
+    min-width: 3rem;
+    border: solid 1px $bg-dark;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        background-color: white;
+        left: -20%;
+        transform: rotate(45deg);
+        border: solid 1px transparent;
+        border-bottom-color: $bg-dark;
+        border-left-color: $bg-dark;
+    }
+}

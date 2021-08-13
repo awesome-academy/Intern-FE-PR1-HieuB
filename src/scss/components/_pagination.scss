@@ -10,6 +10,7 @@
         &.next-item {
             display: none;
             visibility: hidden;
+
             @include minWidth($md) {
                 display: block;
                 visibility: visible;
