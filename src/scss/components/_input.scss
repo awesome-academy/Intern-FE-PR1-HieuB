@@ -1,6 +1,16 @@
 .input-component {
-    input {
+    input,
+    textarea {
         font-size: 1.8rem;
+
+        &::placeholder {
+            font-size: 1.8rem;
+        }
+    }
+
+    label {
+        font-size: 1.5rem;
+        color: $gray-color;
     }
 
     button.btn {

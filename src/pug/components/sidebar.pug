@@ -1,0 +1,38 @@
+mixin productCategory(list = productCategoryList)
+    ul.product-category__list
+        each val in list
+            li.product-category__item.mt-3.py-3
+                a.d-flex.align-items-center(href=val.url)
+                    i.mr-2(class="fas fa-chevron-right")
+                    span.mr-2=val.name
+                    if(val.list.length > 1)
+                        span="("+val.list.length+")"
+                    each value in val.list
+                        if(list.length > 0) 
+                            .dropdown-category.pl-3.pt-2
+                                ul.dropdown-category__list
+                                    li.dropdown-category__item.py-2
+                                        a.d-flex.align-items-center(href=value.url)
+                                            i.mr-2(class="fas fa-chevron-right")
+                                            span=value.name
+
+mixin priceList(list = listPrice)
+    ul.product-category__list
+        each val in list
+            li.product-category__item.mt-3.py-3
+                span.d-flex.align-items-center
+                        i.mr-2(class="fas fa-chevron-right")
+                        span.mr-2=val.start+ "Đ" +" - "+val.end+" "+"Đ"
+
+mixin colorList()
+    each val in productListColor 
+        li.productlist__color-item.d-flex.align-items-center.w-50.mt-3
+            span.color.d-inline-block.mr-2.rounded-circle(style="background-color:"+val.color+";")
+            span.color-title=val.name
+
+mixin blogTag(list = tagList)
+    each val, index in list 
+        if(index == 0)
+            a.btn.btn-full.mr-3.mt-3(href="")=val
+        else
+            a.btn.btn-white.mr-3.mt-3(href="")=val

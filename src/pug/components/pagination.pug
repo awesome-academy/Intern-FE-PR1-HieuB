@@ -1,0 +1,12 @@
+mixin pagination(totalPage=4)
+    nav(aria-label="Page navigation example")
+        ul.pagination
+            li.page-item.text-center.mr-3.prev-item
+                a.page-link.rounded-0(href="#") Trang trước
+            -var page=1;
+            while page <= totalPage 
+                li.page-item.text-center.mr-3
+                    a.page-link.rounded-0(href="#")=page 
+                - page++
+            li.page-item.text-center.mr-3.next-item
+                a.page-link.rounded-0(href="#") Trang cuối

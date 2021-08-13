@@ -1,4 +1,4 @@
-extends ../layouts/default-layout
+extends ../base/default-layout
 
 block vars
 	-title = 'Hello everyone'
@@ -6,10 +6,64 @@ block vars
 	-des='Đây là project 1'
 
 block container
-	include ../partials/homepage/slideshow
-	include ../partials/homepage/floatingproduct
-	include ../partials/homepage/saleproduct
-	include ../partials/homepage/banner
-	include ../partials/homepage/newproduct
-	include ../partials/homepage/news
-	include ../partials/popup
+	section.slideshow
+		+slideShow()
+	section.floating-product.py-5
+		.container
+			.section__title.mb-4.pb-3
+				h2 Sản phẩm nổi bật
+			.row
+				.col-12.col-md-6.pt-4
+					+productItem({name:"Cây cọ dừa", isNew:true, src:"../images/spx2-3.png", star:2.5, price:"200.000", pricesale:"100.000"})
+					.row
+						.col-6.pt-4
+							+productItem({name:"Cây cọ dừa 2", isNew:false, src:"../images/spx2-4.png", star:4.5, price:"400.000", pricesale:"200.000"})
+						.col-6.pt-4
+							+productItem({name:"Cây cọ dừa 3", isNew:"none", src:"../images/spx2-5.png", star:5, price:"200.000", pricesale:"50.000"})
+				.col-12.col-md-6
+					.row
+						.col-6.pt-4
+							+productItem({name:"Cây cọ dừa 4", isNew:true, src:"../images/spx2-6.png", star:4, price:"500.000", pricesale:"400.000"})
+						.col-6.pt-4
+							+productItem({name:"Cây cọ dừa 5", isNew:false, src:"../images/spx2-7.png", star:2.5, price:"200.000", pricesale:"100.000"})
+					.row
+						.col-12.pt-4
+							+productItem({name:"Cây cọ dừa 6", isNew:true, src:"../images/spx2-8.png", star:4, price:"800.000", pricesale:"600.000"})
+	section.sale-hot-product
+		.container
+			.row
+				.col-12.col-lg-3
+					.section__title.mb-4.pb-3
+						h2 Sản phẩm mua nhiều
+					ul.hot-product-list.mt-3.mb-3
+						+productItemGrid("more", list)
+				.col-12.col-lg-9
+					.section__title.mb-4.pb-3.d-flex.align-items-center.justify-content-between
+						h2 Sản phẩm khuyến mãi
+						.button-group
+							a.ml-3(href="")
+								i(class="fas fa-chevron-circle-left") 
+							a.ml-3(href="")
+								i(class="fas fa-chevron-circle-right") 
+					.row
+						+productItemGrid("sale", list)
+	section.banner
+		+banner
+	section.new-product.py-5
+		.container
+			.section__title.mb-4.pb-3.d-flex.align-items-center.justify-content-between
+				h2 Sản phẩm mới
+				.button-group
+					a.ml-3(href="")
+						i(class="fas fa-chevron-circle-left") 
+					a.ml-3(href="")
+						i(class="fas fa-chevron-circle-right") 
+			.row
+				+productItemGrid
+	section.homepage-news.py-5
+		.container 
+			.section__title.mb-4.pb-3
+				h2 Tin Tức
+			.row
+				+news()
+	+popup 

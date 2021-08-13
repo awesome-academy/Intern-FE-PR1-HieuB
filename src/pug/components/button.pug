@@ -1,0 +1,29 @@
+mixin buttonSocialItem(data)
+    .mr-3.d-flex.align-items-center.mt-3
+        a.d-flex.align-items-center.btn-item.mr-3(href="#", class="btn-"+data.name)
+            i.mr-2(class=data.url)
+            span=data.content
+        if(data.haveCount == true)
+            span.count-page.d-flex.align-items-center.justify-content-center.position-relative=0
+
+mixin button(name = "", url = "")
+    a.btn.btn-with-icon.d-flex.align-items-center.justify-content-center
+        i(class=url)
+
+mixin buttonIcon(list = [])
+    each val in list
+        a.btn.ml-3.btn-with-icon.rounded-circle.d-flex.align-items-center.justify-content-center
+            i(class=val.url)
+
+mixin buttonSocial(list = listSocials)
+    .d-flex.justify-content-between.align-items-center.flex-wrap.p-3
+        .d-flex.align-item-center.flex-wrap
+            each val in list
+                if(val.isalone == false) 
+                    +buttonSocialItem(val)
+                        
+        .mr-3.d-flex.align-items-center
+            each val in list
+                if(val.isalone == true)
+                    +buttonSocialItem(val)
+                        

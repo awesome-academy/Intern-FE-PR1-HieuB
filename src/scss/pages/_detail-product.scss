@@ -1,0 +1,17 @@
+section.product-detail {
+    @include minWidth($lg) {
+        .button-count {
+            padding-right: 60%;
+        }
+    }
+
+    .input-component {
+        .input-group {
+            .form-control {
+                height: 4rem;
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+mixin listIcon()
+    ul.d-flex.align-items-center.icon-list
+        each val in iconList
+            li.icon-item.mr-3 
+                a.icon-link(href="", class="icon-link__"+val.name)
+                    i(class=val.url)
+
+mixin listVisa()
+    ul.visa-list.d-flex.align-items-center.pt-3
+        each val in footerBottomVisa 
+            li.visa-item.mr-3
+                i(class=val)

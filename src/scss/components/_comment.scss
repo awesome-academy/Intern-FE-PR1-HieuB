@@ -1,0 +1,68 @@
+.section-comment {
+    .comment-title {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .comment-list {
+        .comment-item {
+            border-bottom: solid 1px $gray-color-light;
+
+            .user-avatar {
+                width: 5rem;
+                height: 5rem;
+                img {
+                    width: 5rem;
+                }
+            }
+
+            .user-info {
+                .user-name {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                .user-comment,
+                .time-comment {
+                    font-size: 1.3rem;
+                    color: $gray-color;
+                }
+            }
+
+            .btn-reply {
+                a {
+                    display: block;
+                    width: max-content;
+                    color: $bg-dark;
+                    text-decoration: underline;
+                    font-size: 1.3rem;
+                }
+            }
+
+            &.comment-reply {
+                margin-left: 6.5rem;
+            }
+        }
+    }
+
+    .input-form {
+        form {
+            .form-group {
+                .input-component {
+                    margin-top: 2rem !important;
+                }
+
+                @include minWidth($md) {
+                    &.form-info-group {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .input-component {
+                            max-width: 32%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+extends ../base/default-layout
+
+block vars
+	-title = 'Hello everyone'
+	-bodyClass = 'cart'
+	-des='Đây là project 1 cart'
+
+block container
+	section.cart.py-4
+		.container
+			+breadCrumb([{name:"Trang chủ", url:"index.html"}, {name:"Giỏ hàng", url:"productcart.html"}])
+			div.cart-title.py-4
+				h2 GIỎ HÀNG
+			+table
+			.button-group.mt-4.justify-content-between.d-flex 
+				a.btn.btn-white.rounded-pill(href="") HUỶ ĐƠN HÀNG
+				a.btn.btn-full.rounded-pill(href="") TIẾP TỤC MUA
+			.mt-5.d-flex.justify-content-end.table-medium 
+				+tableTotalMoney
+			.button-group.mt-4.justify-content-end.d-flex 
+				a.btn.btn-full.rounded-pill(href="") THANH TOÁN
+	

@@ -1,0 +1,110 @@
+-
+    var slideImage = ["slide-1920x590.png", "slide-1920x590.png", "slide-1920x590.png"];
+
+-
+    var iconList = [
+        {name: 'facebook', url: "fab fa-facebook-f"},
+        {name: "twitter", url:"fab fa-twitter"}, 
+        {name: "youtube", url: "fab fa-youtube"}, 
+        {name: "instagram", url:"fab fa-instagram"}];
+
+-
+    var contactInputList = [
+        {type:"text", placeholder:"", id:"inputName", nameLabel:"Họ và tên:", required:true}, {type:"email", placeholder:"", id:"inputEmail", nameLabel:"Địa chỉ email:", required:true}, {type:"tel", placeholder:"", id:"inputTel", nameLabel:"Số điện thoại:", required:true}];
+
+-
+    var navbarItem = [
+        {name:"TRANG CHỦ", url:"index.html", isActive:true, isDropDown:false}, 
+        {name:"GIỚI THIỆU", url:"aboutus.html", isActive:false, isDropDown:false}, 
+        {name:"SẢN PHẨM", url:"produc-list.html",  isActive:false, isDropDown:true, dropdownList:[{name:"DANH SÁCH SẢN PHẨM", url:"product-list.html"}]},
+        {name:"SẢN PHẨM MỚI", url:"newproductlist.html", isActive:false, isDropDown:false}, 
+        {name:"TIN TỨC",  url:"news.html", isActive:false, isDropDown:false}, 
+        {name:"LIÊN HỆ", url:"contact.html", isActive:false, isDropDown:false}];
+
+-
+    var footerListInfo = [
+        {title:"THÔNG TIN KHÁCH HÀNG", list:["Tài khoản của tôi", "Sản phẩm yêu thích", "Lịch sử mua hàng", "Chính sách đổi trả", "Góp ý, khiếu nại"]}, 
+        {title:"HỖ TRỢ DỊCH VỤ", list:["Hệ thống cửa hàng", "Hướng dẫn mua hàng", "Hướng dẫn thanh toán", "Tích điểm đổi quà", "Câu hỏi thường gặp"]}, 
+        {title:"CHÍNH SÁCH ƯU ĐÃI", list:["Chính sách giao hàng", "Chính sách đổi trả sản phẩm", "Chính sách bảo hành", "Giới thiệu sản phẩm mới", "Chính sách trả góp"]}, 
+        {title:"TIN TỨC", list:["Tin mới", "Khuyến mãi", "Tuyển dụng", "Download", "Tags"]}];
+
+-
+    var footerBottomList = ["Sitemap", "Danh mục sản phẩm", "Hợp tác", "Thông tin liên hệ", "Câu hỏi thường gặp"];
+
+-
+    var footerBottomVisa = ["fab fa-cc-visa", "fab fa-cc-mastercard","fab fa-cc-paypal","fab fa-cc-discover"];
+
+-
+    var productListColor = [
+        {name:"Xanh cây", color:"green"}, 
+        {name:"Đỏ cam", color:"Orange"}, 
+        {name:"Tím", color:"violet"}, 
+        {name:"Xanh trời", color:"blue"}, 
+        {name:"Vàng", color:"yellow"}, 
+        {name:"Hồng", color:"pink"}];
+
+-
+    var products = [
+        {name:"Cây Chân Chim", isNew:true, src:"./images/spx2-4.png", star:1.5, price:"300.000", pricesale:"250.000", status:"none", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Cọ Ta", isNew:"none", src:"./images/spx2-11.png", star:4, price:"200.000", pricesale:"100.000", status:"none", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Dừa Nhỏ", isNew:"none", src:"./images/spx2-6.png", star:5, price:"300.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Danh Dự", isNew:true, src:"./images/spx2-5.png", star:5, price:"300.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Đa Búp Đỏ", isNew:true, src:"./images/spx2-15.png", star:4.5, price:"300.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, {name:"Cây Đa Búp Đỏ", isNew:"none", src:"./images/spx2-3.png", star:5, price:"500.000", pricesale:"450.000", status:"show"}, 
+        {name:"Cây Cọ Ta", isNew:"none", src:"./images/spx2-11.png", star:4, price:"200.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}, 
+        {name:"Cây Cọ Ta", isNew:"none", src:"./images/spx2-11.png", star:4, price:"200.000", pricesale:"100.000", status:"show", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque."}];
+
+
+-
+    var newsList = [
+        {title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách", image:"news1.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}, {title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách 2", image:"news2.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}, {title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách 3", image:"news3.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}, {title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách 4", image:"news1.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}, {title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách 5", image:"news1.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}];
+
+-
+    var productCategoryList = [
+        {name:"Cây chậu treo", url:"index.html", list:[
+            {name:"Cây chậu treo 1",  url:"index.html"}, 
+            {name:"Cây chậu treo 2", url:"index.html"}, 
+            {name:"Cây chậu treo 3",  url:"index.html"}]}, 
+        {name:"Cây chậu treo", url:"index.html", list:[
+            {name:"Cây chậu treo 1",  url:"index.html"}, 
+            {name:"Cây chậu treo 2", url:"index.html"}]}, 
+        {name:"Cây chậu treo", url:"index.html", list:[
+            {name:"Cây chậu treo 1",  url:"index.html"}, 
+            {name:"Cây chậu treo 2", url:"index.html"}]}, 
+        {name:"Cây chậu treo", url:"index.html", list:[
+            {name:"Cây chậu treo 1",  url:"index.html"}, 
+            {name:"Cây chậu treo 2", url:"index.html"}]}, 
+        {name:"Cây chậu treo", url:"index.html", list:[
+            {name:"Cây chậu treo 1",  url:"index.html"}, 
+            {name:"Cây chậu treo 2", url:"index.html"}]}];
+
+-
+    var listPrice = [
+        {start:"200.000", end:"400.000"}, 
+        {start:"400.000", end:"600.000"}, 
+        {start:"600.000", end:"800.000"}, 
+        {start:"800.000", end:"1.000.000"}, 
+        {start:"1.000.000", end:"2.000.000"}];
+
+-
+    var selectList = [
+        {name:"Tên sản phẩm", value:"byname"}, 
+        {name:"Giá tăng dần", value:"bypriceup"}, 
+        {name:"Giá giảm dần", value:"bypricedown"}];
+
+-
+    var tagList = ["Cây văn phòng", "Cây phát lộc", "Cây xanh", "Cây trang trí", "Cây", "Plants", "Sức khoẻ", "Quà tặng", "Lưu niệm"];
+
+-
+    var iconBtn = [
+        {name:"search", url:"fas fa-search"}, 
+        {name:"like", url:"fas fa-heart"}];
+
+-
+    var listSocials = [
+        {content:"Like", url:"fab fa-facebook-square", name:"facebook", haveCount:true, isalone:false, count:1}, 
+        {content:"Tweet", url:"fab fa-twitter", name:"twitter", haveCount:false, isalone:false}, {content:"", url:"fab fa-google-plus-g", name:"google-plus", haveCount:true, isalone:false, count:1}, 
+        {content:"Share", url:"far fa-plus-square", name:"share", haveCount:false, isalone:true}];
+
+-
+    var commentList = [{avatar:"avatar.png", name:"Nguyễn Minh Hiếu", comment:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque", time:"Thứ 7, 26/12/2015 12:00 AM", reply:[{avatar:"avatar.png", name:"Nguyễn Minh Hiếu", comment:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque", time:"Thứ 7, 26/12/2015 12:00 AM"}]}, {avatar:"avatar.png", name:"Nguyễn Minh Hiếu", comment:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque", time:"Thứ 7, 26/12/2015 12:00 AM"}];
+
+-
+    var listColumn = ["HÌNH ẢNH", "TÊN SẢN PHẨM", "ĐƠN GIÁ", "SỐ LƯỢNG", "THÀNH TIỀN", "XOÁ"];
+-
+    var listFooter = ["TỔNG PHẢI THANH TOÁN"];

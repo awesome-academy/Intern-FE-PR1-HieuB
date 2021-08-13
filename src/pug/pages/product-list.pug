@@ -1,0 +1,56 @@
+extends ../base/default-layout
+
+block vars
+	-title = 'Hello everyone'
+	-bodyClass = 'product-list'
+	-des='Đây là project 1 product list'
+
+block container
+	section.product-list.py-4
+		.container
+			+breadCrumb([{name:"Trang chủ", url:"index.html"}, {name:"Danh sách sản phẩm", url:"product-list.html"}])
+			.row
+				.col-12.col-md-4.col-lg-3
+					.product-list__sidebar.mt-4
+						.row
+							.col-12
+								.product__category
+									.section__title.mb-4.pb-3
+										h2 Danh mục sản phẩm
+									+productCategory
+
+							.col-12
+								.product__category.mt-5
+									.section__title.mb-4.pb-3
+										h2 Tìm theo giá
+									+priceList
+
+							div(class="col-12")
+								.product__category.mt-5
+									.section__title.mb-4.pb-3
+										h2 Tìm theo màu
+									div.productlist__color
+										ul.productlist__color-list.d-flex.align-items-center.flex-wrap
+											+colorList()
+				.col-12.col-md-8.col-lg-9
+					.productlist-banner.mt-4
+						img(src="./images/bannerproductlist.png", alt="images")
+					.productlist__tab-panel.py-3.d-flex.align-items-center.justify-content-between.flex-wrap
+						.btn-group.nav.nav-pills#list-tab(role="tablist", aria-label="Basic mixed styles example")
+							button.btn.p-0.mr-4#pills-listproduct-grid-tab(type="button", data-toggle="pill", href="#pills-grid", role="tab", aria-controls="pills-grid", aria-selected="true")
+								i(class="fas fa-th")
+							button.btn.p-0.mr-4#pills-listproduct-list-tab(type="button", data-toggle="pill", href="#pills-list", role="tab", aria-controls="pills-list", aria-selected="true")
+								i(class="fas fa-th-list")
+						.productlist-filter
+							form.form-inline
+								+selectForm
+								+selectForm("Show","show-count", true, 15)
+					.tab-content#pills-tabContent
+						.productlist-content__grid.tab-pane.fade.show.active#pills-grid(role="tabpanel", aria-labelledby="pills-listproduct-grid-tab")
+							.row
+								+productItemGrid("sale")
+						.productlist-content__list.tab-pane.fade.show#pills-list(role="tabpanel", aria-labelledby="pills-listproduct-list-tab")
+							.row
+								+productItemList()
+					.d-flex.justify-content-end.mt-4
+						+pagination

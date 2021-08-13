@@ -1,0 +1,35 @@
+mixin slideShow(list=slideImage)
+    .carousel.slide#carouselExampleCaptions(data-ride="carousel")
+        ol.carousel-indicators
+            each val, index in list
+                if(index === 0)
+                    li.active.rounded-circle(data-target="#carouselExampleCaptions", data-slide-to=index)
+                else
+                    li.rounded-circle(data-target="#carouselExampleCaptions", data-slide-to=index)
+        .carousel-inner
+            each val, index in list
+                if(index === 0)
+                    .carousel-item.active
+                        img.d-block.w-100(src="./images/"+val, alt="slide"+index)
+                else
+                    .carousel-item
+                        img.d-block.w-100(src="./images/"+val, alt="slide"+index)
+
+mixin carouselDetailImage(list)
+    .carousel.position-static.slide(id=list.name)
+        .carousel-inner
+            each val, index in list.list
+                if(index == 0)
+                    .carousel-item.active
+                        img.d-block.w-100(src="./images/"+val, alt=val)
+                else 
+                    .carousel-item
+                        img.d-block.w-100(src="./images/"+val, alt=val)
+        .carousel-indicators.position-static.mt-3.w-100.ml-0.mr-0
+            .row.justify-content-around
+                each val, index in list.list
+                    .col-3.px-4
+                        if(index == 0)
+                            img.active(src="./images/"+val, data-target="#"+list.name, data-slide-to=index, alt=val)
+                        else 
+                            img(src="./images/"+val, alt=val, data-target="#"+list.name, data-slide-to=index)

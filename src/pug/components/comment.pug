@@ -1,0 +1,42 @@
+mixin commentItem(data)
+    .user-avatar
+        img(src="./images/"+data.avatar, alt=data.avatar)
+    .user-info.px-4
+        .user-name
+            span=data.name
+        .user-comment.mt-3
+            span=data.comment
+        .time-comment.mt-3 
+            time=data.time
+    .btn-reply
+        a(href="") Trả lời
+    
+
+mixin commentList(list = commentList)
+    section.section-comment.py-5
+        .comment-title.d-flex.align-items-center
+            h2.inline-block.mr-2="BÌNH LUẬN"+" "
+            span="("+3+")"
+        .comment-list.mt-5
+            each val in list 
+                .comment-item.py-5.d-flex
+                    +commentItem(val)              
+                if val.reply
+                    each value in val.reply 
+                        .comment-item.comment-reply.py-5.d-flex
+                            +commentItem(value)               
+                        
+mixin writeComment()
+    section.section-comment.py-5
+        .comment-title.d-flex.align-items-center
+            h2="VIẾT BÌNH LUẬN:"
+        .input-form.mt-5
+            form
+                .form-group.form-info-group 
+                    +input("text", "Họ và tên:", false)
+                    +input("email", "Email:", false)
+                    +input("tel", "Phone:", false)
+                .form-group 
+                    +textArea("Bình luận", 4)
+                .form-group.d-flex.justify-content-end 
+                    a.btn.btn-full.rounded-pill(href="") BÌNH LUẬN 

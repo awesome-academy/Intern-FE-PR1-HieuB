@@ -1,44 +1,56 @@
 footer.footer
-    div(class="footer-top pb-5")
+    .footer-top.pb-5
         .container
             .row
-                div(class="col-12 col-lg-4")
-                    div(class="footer__social-network pr-4 pt-5")
-                        span(class="d-block") KÊNH HỆ THỐNG THÔNG TIN TỪ CHÚNG TÔI 
-                        +renderListIcon()
-                div(class="col-12 col-md-8")
-                    div(class="footer__email-input pt-5")
+                .col-12.col-lg-4
+                    .footer__social-network.pr-4.pt-5
+                        span.d-block KÊNH HỆ THỐNG THÔNG TIN TỪ CHÚNG TÔI 
+                        +listIcon()
+                .col-12.col-md-8
+                    .footer__email-input.pt-5
                         .row
-                            div(class="col-12 col-lg-3")
-                                div(class="footer__email-input-title pr-4 pb-3")
+                            .col-12.col-lg-3
+                                .footer__email-input-title.pr-4.pb-3
                                     h2 ĐĂNG KÝ NHẬN EMAIL TỪ CHÚNG TÔI
-                            div(class="col-12 col-md-9")
-                                +renderInput("text","")
-    div(class="footer-main py-5")
+                            .col-12.col-md-9
+                                +input("text","")
+    .footer-main.py-5
         .container
             .row
-                div(class="col-12 col-md-4")
+                .col-12.col-md-4
                     .footer__brand-box
-                        h2(class="footer__brand-title text-center")="Green"+" "
+                        h2.footer__brand-title.text-center="Green"+" "
                             span Shop
-                        span(class="footer__brand-slogan mt-2 d-block text-center") Món quà từ thiên nhiên
-                        span(class="d-block footer__brand-des mt-4 pr-4") Green Shop được thành lập từ 8/2010 được sự tin tưởng của khách hàng trong suốt thời gian hoạt động đến nay cửa hàng ngày một phát triển
-                        div(class="footer__contact mt-4")
-                            address(class="d-flex align-items-center py-2")
-                                i(class="fas fa-mobile mr-3")
+                        span.footer__brand-slogan.mt-2.d-block.text-center Món quà từ thiên nhiên
+                        span.d-block.footer__brand-des.mt-4.pr-4 Green Shop được thành lập từ 8/2010 được sự tin tưởng của khách hàng trong suốt thời gian hoạt động đến nay cửa hàng ngày một phát triển
+                        .footer__contact.mt-4
+                            address.d-flex.align-items-center.py-2
+                                i.mr-3(class="fas fa-mobile")
                                 span Điện thoại: (84-4) 66.558.868
-                            address(class="d-flex align-items-center py-2")
-                                i(class="far fa-envelope mr-3")
+                            address.d-flex.align-items-center.py-2
+                                i.mr-3(class="far fa-envelope")
                                 span Email: info@dkt.com.vn
                                 
-                div(class="col-12 col-md-8")
+                .col-12.col-md-8
                     .row
-                        +renderListFooter()
-    div(class="footer-bottom pb-3")
+                        each value in footerListInfo
+                            .col-12.col-md-6.col-lg-3
+                                .footer__list-box.py-2
+                                    h2.list-box__title=value.title 
+                                    ul.list-box__list.pt-3
+                                        each val in value.list
+                                            li.list-box__item.py-2
+                                                a.d-flex.align-items-center(href="")
+                                                    i.mr-2(class="fas fa-chevron-right")
+                                                    span=val
+    .footer-bottom.pb-3
         .container
-            div(class="d-flex justify-content-between align-items-center flex-wrap")
-                +renderFooterBottomList
-                +renderFooterBottomVisa
-    div(class="footer-copyright py-3 text-center bg-dark")
+            .d-flex.justify-content-between.align-items-center.flex-wrap
+                ul.footer-bottom__list.d-flex.align-items-center.pt-3
+                    each value in footerBottomList
+                        li.footer-bottom-item.mr-3
+                            a.item-link(href="")=value
+                +listVisa
+    .footer-copyright.py-3.text-center.bg-dark
         span Thiết kế bởi Bizweb 
         i(class="far fa-copyright")           
