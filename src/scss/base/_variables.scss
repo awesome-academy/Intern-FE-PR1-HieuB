@@ -1,11 +1,17 @@
 // color
-$primary-color: #ffb03b;
-$secondary-color: #5f5950;
-$third-color: #97a6b1;
-$primary-color-light: #fff6e8;
+$primary-color: #3fb871;
+$silver-color: silver;
 $dark-gray-color:#35322d;
+$gray-color: gray;
+$gray-color-light: rgba(128, 128, 128, 0.349);
+$bg-dark:#212529;
 // font
-$primary-font:'Poppins',
-sans-serif;
-$secondary-font:'Satisfy',
+$ballet-font:'Ballet',
 cursive;
+// breakpoint
+$xs:0px;
+$sm:36em;
+$md:48em;
+$lg:62em;
+$xl:75em;
+$xxl:87.5em;

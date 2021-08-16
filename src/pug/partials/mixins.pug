@@ -1,8 +1,68 @@
 - var iconList = [{name: 'facebook',url: "fab fa-facebook-f"},{name: "twitter",url:"fab fa-twitter"},{name: "youtube",url: "fab fa-youtube"},{name: "instagram",url: "fab fa-instagram"}];
-
+- var navbarItem=[{name:"TRANG CHỦ", url:"index.html", isActive:true,isDropDown:false},{name:"GIỚI THIỆU", url:"aboutus.html", isActive:false,isDropDown:false},{name:"SẢN PHẨM", url:"produclist.html", isActive:false,isDropDown:true},{name:"SẢN PHẨM MỚI", url:"newproductlist.html", isActive:false,isDropDown:true},{name:"TIN TỨC", url:"news.html", isActive:false,isDropDown:false},{name:"LIÊN HỆ", url:"contact.html", isActive:false,isDropDown:false}];
+- var footerListInfo=[{title:"THÔNG TIN KHÁCH HÀNG",list:["Tài khoản của tôi","Sản phẩm yêu thích","Lịch sử mua hàng","Chính sách đổi trả","Góp ý, khiếu nại"]},{title:"HỖ TRỢ DỊCH VỤ",list:["Hệ thống cửa hàng","Hướng dẫn mua hàng","Hướng dẫn thanh toán","Tích điểm đổi quà","Câu hỏi thường gặp"]},{title:"CHÍNH SÁCH ƯU ĐÃI",list:["Chính sách giao hàng","Chính sách đổi trả sản phẩm","Chính sách bảo hành","Giới thiệu sản phẩm mới","Chính sách trả góp"]},{title:"TIN TỨC",list:["Tin mới","Khuyến mãi","Tuyển dụng","Download","Tags"]}];
+- var footerBottomList=["Sitemap","Danh mục sản phẩm","Hợp tác","Thông tin liên hệ","Câu hỏi thường gặp"];
+-var footerBottomVisa=["fab fa-cc-visa","fab fa-cc-mastercard","fab fa-cc-paypal","fab fa-cc-discover"];
+mixin dropdownItem()
+    a(class="dropdown-item py-3", href="#")='Action 1'
 mixin renderListIcon()
     ul(class="d-flex align-items-center")
         each val in iconList
             li(class="mr-3") 
                 a(href="", class="icon-link icon-link__"+val.name)
                     i(class=val.url)
+
+mixin renderHeaderNavbar( name="Home", url="index.html", isActive=true, isDropDown=false)
+    if(isActive)
+        li(class="nav-item active mr-4 py-3")
+            a(class="nav-link text-white", href=url)=name
+    else if(isDropDown)
+        li(class="nav-item dropdown mr-4 py-3")
+            a(class="nav-link text-white dropdown-toggle", href=url, id="tabletDropdown", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")=name
+            div(class="dropdown-menu", aria-labelledby="tabletDropdown")
+                +dropdownItem
+                +dropdownItem
+                +dropdownItem 
+    else 
+        li(class="nav-item mr-4 py-3")
+            a(class="nav-link text-white", href=url)=name
+
+mixin renderListFooter()
+    each value in footerListInfo
+        div(class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3")
+            div(class="footer__list-box py-2")
+                h2(class="list-box__title")=value.title 
+                ul(class="list-box__list pt-3")
+                    each val in value.list
+                        li(class="list-box__item py-2")
+                            a(href="",class="d-flex align-items-center")
+                                i(class="fas fa-chevron-right mr-2")
+                                span=val
+
+mixin renderFooterBottomList() 
+    ul(class="footer-bottom__list d-flex align-items-center pt-3")
+        each value in footerBottomList
+            li(class="footer-bottom-item mr-3")
+                a(href="", class="item-link")=value
+
+mixin renderFooterBottomVisa()
+    ul(class="footer-bottom__list d-flex align-items-center pt-3")
+        each val in footerBottomVisa 
+            li(class="footer-bottom-item mr-3")
+                i(class=val)
+
+mixin renderPagination()
+    nav(aria-label="Page navigation example")
+        ul(class="pagination")
+            li(class="page-item mr-3")
+                a(class="page-link rounded-0", href="#") Trang trước
+            li(class="page-item mr-3")
+                a(class="page-link rounded-0", href="#") 1
+            li(class="page-item mr-3")
+                a(class="page-link rounded-0", href="#") 2
+            li(class="page-item mr-3")
+                a(class="page-link rounded-0", href="#") 3
+            li(class="page-item mr-3")
+                a(class="page-link rounded-0", href="#") 4
+            li(class="page-item mr-3")
+                a(class="page-link rounded-0", href="#") Trang cuối

@@ -1,0 +1,9 @@
+.pagination {
+    .page-item {
+        min-width: 3.2rem;
+        .page-link {
+            font-size: 1.6rem;
+            color: $primary-color;
+        }
+    }
+}
