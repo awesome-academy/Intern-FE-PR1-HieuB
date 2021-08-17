@@ -24,15 +24,15 @@ img {
 
 button,
 input {
-    box-shadow: none !important;
-    outline: none !important;
-    border-color: white !important;
-    height: 100%;
+    box-shadow: none;
+    outline: none;
+    border-color: white;
 }
 
 input:focus,
 button:focus {
-    outline: none !important;
-    box-shadow: unset !important;
-    border-color: white !important;
+    outline: none;
+    box-shadow: unset;
+    border-color: white;
 }
+

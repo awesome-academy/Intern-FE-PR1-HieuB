@@ -55,7 +55,7 @@ header(class="header")
                     div(class="collapse navbar-collapse", id="navbarNav")
                         ul(class="navbar-nav")
                             each val in navbarItem
-                                +renderHeaderNavbar(val.name, val.url,val.isActive,val.isDropDown)
+                                +renderHeaderNavbar(val.name, val.url, val.isActive, val.isDropDown, val.dropdownList)
                             li(class="nav-item nav-item__login-register active mr-4 py-3")
                                 a(class="nav-link text-white", href="login.html") ĐĂNG NHẬP
                             li(class="nav-item nav-item__login-register active mr-4 py-3")
@@ -68,3 +68,4 @@ header(class="header")
                         li
                             a(href="", class="text-white")
                                 i(class="fas fa-shopping-cart")
+

@@ -1,10 +1,20 @@
-- var iconList = [{name: 'facebook',url: "fab fa-facebook-f"},{name: "twitter",url:"fab fa-twitter"},{name: "youtube",url: "fab fa-youtube"},{name: "instagram",url: "fab fa-instagram"}];
-- var navbarItem=[{name:"TRANG CHỦ", url:"index.html", isActive:true,isDropDown:false},{name:"GIỚI THIỆU", url:"aboutus.html", isActive:false,isDropDown:false},{name:"SẢN PHẨM", url:"produclist.html", isActive:false,isDropDown:true},{name:"SẢN PHẨM MỚI", url:"newproductlist.html", isActive:false,isDropDown:true},{name:"TIN TỨC", url:"news.html", isActive:false,isDropDown:false},{name:"LIÊN HỆ", url:"contact.html", isActive:false,isDropDown:false}];
-- var footerListInfo=[{title:"THÔNG TIN KHÁCH HÀNG",list:["Tài khoản của tôi","Sản phẩm yêu thích","Lịch sử mua hàng","Chính sách đổi trả","Góp ý, khiếu nại"]},{title:"HỖ TRỢ DỊCH VỤ",list:["Hệ thống cửa hàng","Hướng dẫn mua hàng","Hướng dẫn thanh toán","Tích điểm đổi quà","Câu hỏi thường gặp"]},{title:"CHÍNH SÁCH ƯU ĐÃI",list:["Chính sách giao hàng","Chính sách đổi trả sản phẩm","Chính sách bảo hành","Giới thiệu sản phẩm mới","Chính sách trả góp"]},{title:"TIN TỨC",list:["Tin mới","Khuyến mãi","Tuyển dụng","Download","Tags"]}];
-- var footerBottomList=["Sitemap","Danh mục sản phẩm","Hợp tác","Thông tin liên hệ","Câu hỏi thường gặp"];
--var footerBottomVisa=["fab fa-cc-visa","fab fa-cc-mastercard","fab fa-cc-paypal","fab fa-cc-discover"];
-mixin dropdownItem()
-    a(class="dropdown-item py-3", href="#")='Action 1'
+- var iconList = [{name: 'facebook', url: "fab fa-facebook-f"}, {name: "twitter", url:"fab fa-twitter"}, {name: "youtube", url: "fab fa-youtube"}, {name: "instagram", url: "fab fa-instagram"}];
+
+- var navbarItem=[{name:"TRANG CHỦ", url:"index.html", isActive:true, isDropDown:false}, {name:"GIỚI THIỆU", url:"aboutus.html", isActive:false, isDropDown:false},{name:"SẢN PHẨM", url:"produclist.html", isActive:false, isDropDown:true, dropdownList:[{name:"DANH SÁCH SẢN PHẨM", url:"productlist.html"}]}, {name:"SẢN PHẨM MỚI", url:"newproductlist.html", isActive:false, isDropDown:true}, {name:"TIN TỨC", url:"news.html", isActive:false, isDropDown:false}, {name:"LIÊN HỆ", url:"contact.html", isActive:false,isDropDown:false}];
+
+- var footerListInfo=[{title:"THÔNG TIN KHÁCH HÀNG", list:["Tài khoản của tôi", "Sản phẩm yêu thích","Lịch sử mua hàng", "Chính sách đổi trả", "Góp ý, khiếu nại"]}, {title:"HỖ TRỢ DỊCH VỤ", list:["Hệ thống cửa hàng", "Hướng dẫn mua hàng", "Hướng dẫn thanh toán", "Tích điểm đổi quà", "Câu hỏi thường gặp"]},{title:"CHÍNH SÁCH ƯU ĐÃI", list:["Chính sách giao hàng", "Chính sách đổi trả sản phẩm", "Chính sách bảo hành", "Giới thiệu sản phẩm mới", "Chính sách trả góp"]}, {title:"TIN TỨC", list:["Tin mới","Khuyến mãi","Tuyển dụng","Download","Tags"]}];
+
+- var footerBottomList=["Sitemap", "Danh mục sản phẩm", "Hợp tác", "Thông tin liên hệ", "Câu hỏi thường gặp"];
+
+-var footerBottomVisa=["fab fa-cc-visa", "fab fa-cc-mastercard", "fab fa-cc-paypal", "fab fa-cc-discover"];
+
+-var productListColor=[{name:"Xanh cây", color:"green"}, {name:"Đỏ cam", color:"Orange"}, {name:"Tím",  color:"violet"}, {name:"Xanh trời", color:"blue"}, {name:"Vàng", color:"yellow"}, {name:"Hồng", color:"pink"}];
+
+-var floatingproduct=[{name:"Cây Chân Chim", isNew:true, src:"./images/spx2-4.png", star:1.5, price:"300.000", pricesale:"250.000", status:"none"}, {name:"Cây Cọ Ta", isNew:"none", src:"./images/spx2-11.png", star:4, price:"200.000", pricesale:"100.000", status:"none"}, {name:"Cây Dừa Nhỏ", isNew:"none", src:"./images/spx2-6.png", star:5, price:"300.000", pricesale:"100.000"}, {name:"Cây Danh Dự", isNew:true, src:"./images/spx2-5.png", star:5, price:"300.000", pricesale:"100.000"}, {name:"Cây Đa Búp Đỏ", isNew:true, src:"./images/spx2-15.png", star:4.5, price:"300.000", pricesale:"100.000"}, {name:"Cây Đa Búp Đỏ", isNew:"none", src:"./images/spx2-3.png", star:5, price:"500.000", pricesale:"450.000"},{name:"Cây Cọ Ta", isNew:"none", src:"./images/spx2-11.png", star:4, price:"200.000", pricesale:"100.000"},{name:"Cây Cọ Ta", isNew:"none", src:"./images/spx2-11.png", star:4, price:"200.000", pricesale:"100.000"}];
+
+mixin dropdownItem(name="Action", url="index.html")
+    a(class="dropdown-item py-3", href=url)=name
+
 mixin renderListIcon()
     ul(class="d-flex align-items-center")
         each val in iconList
@@ -12,7 +22,7 @@ mixin renderListIcon()
                 a(href="", class="icon-link icon-link__"+val.name)
                     i(class=val.url)
 
-mixin renderHeaderNavbar( name="Home", url="index.html", isActive=true, isDropDown=false)
+mixin renderHeaderNavbar( name="Home", url="index.html", isActive=true, isDropDown=false, dropdownList=[{name:"", url:""}])
     if(isActive)
         li(class="nav-item active mr-4 py-3")
             a(class="nav-link text-white", href=url)=name
@@ -20,9 +30,8 @@ mixin renderHeaderNavbar( name="Home", url="index.html", isActive=true, isDropDo
         li(class="nav-item dropdown mr-4 py-3")
             a(class="nav-link text-white dropdown-toggle", href=url, id="tabletDropdown", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")=name
             div(class="dropdown-menu", aria-labelledby="tabletDropdown")
-                +dropdownItem
-                +dropdownItem
-                +dropdownItem 
+                each val in dropdownList
+                    +dropdownItem(val.name,val.url)
     else 
         li(class="nav-item mr-4 py-3")
             a(class="nav-link text-white", href=url)=name
@@ -35,7 +44,7 @@ mixin renderListFooter()
                 ul(class="list-box__list pt-3")
                     each val in value.list
                         li(class="list-box__item py-2")
-                            a(href="",class="d-flex align-items-center")
+                            a(href="", class="d-flex align-items-center")
                                 i(class="fas fa-chevron-right mr-2")
                                 span=val
 
@@ -66,3 +75,191 @@ mixin renderPagination()
                 a(class="page-link rounded-0", href="#") 4
             li(class="page-item mr-3")
                 a(class="page-link rounded-0", href="#") Trang cuối
+
+mixin renderfloatingProduct(name="Cây Chân Chim", isNew=true, src="./images/spx2-4.png", star=5, price="300.000", pricesale="250.000", status="none")
+    div(class="card floating-product__card mt-2 mb-3")
+        div(class="floating-product__image")
+            img(src=src, class="card-img-top", alt="card1")
+            if(isNew==true)
+                div(class="status__product status-new text-white") 
+                    span NEW
+            else if(isNew==false)
+                div(class="status__product status-sale text-white") 
+                    span -50%
+            else if(isNew=="none")
+                div(class="status__product status-sale text-white d-none")
+            div(class="floating-product__overlay")
+                div(class="button-group w-100 d-flex justify-content-center align-items-center")
+                    a(href="", class="btn rounded-pill btn-full mr-3") MUA NGAY 
+                    a(href="", class="p-3 bg-white rounded-circle text-dark")
+                        i(class="fas fa-search") 
+        div(class="card-body text-center")
+            h5(class="card-title")=name
+            div(class="card-rate")
+                ul(class="rate-list d-flex align-items-center justify-content-center")
+                    -var count=0+0.5;
+                    while count<star
+                        li(class="rate-item mr-1")
+                            i(class="fas fa-star")
+                        - count++;
+                        if(count==star)
+                            li(class="rate-item mr-1")
+                                i(class="fas fa-star-half")
+            div(class="card-price mt-3")
+                span(class="price-sale mr-3")=price+" "+"đ"
+                span(class="price-cost text-muted")=pricesale+" "+"đ"
+
+mixin renderfloatingProduct1(product="new")
+    each val in floatingproduct
+        if(product=="new")
+            div(class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3")
+                div(class="card floating-product__card mt-2 mb-3")
+                    div(class="floating-product__image")
+                        img(src=val.src,class="card-img-top", alt="card1")
+                        if(val.isNew==true)
+                            div(class="status__product status-new text-white") 
+                                span NEW
+                        else if(val.isNew==false)
+                            div(class="status__product status-sale text-white") 
+                                span -50%
+                        else if(val.isNew=="none")
+                            div(class="status__product status-sale text-white d-none")
+                        div(class="floating-product__overlay")
+                            div(class="button-group w-100 d-flex justify-content-center align-items-center")
+                                a(href="", class="btn rounded-pill btn-full mr-3") MUA NGAY 
+                                a(href="", class="p-3 bg-white rounded-circle text-dark")
+                                    i(class="fas fa-search") 
+                    div(class="card-body text-center")
+                        h5(class="card-title")=val.name
+                        div(class="card-rate")
+                            ul(class="rate-list d-flex align-items-center justify-content-center")
+                                -var count=0+0.5;
+                                while count<val.star
+                                    li(Class="rate-item mr-1")
+                                        i(class="fas fa-star")
+                                    - count++;
+                                    if(count==val.star)
+                                        li(Class="rate-item mr-1")
+                                            i(class="fas fa-star-half")
+                        div(class="card-price mt-3")
+                            span(class="price-sale mr-3")=val.price+" "+"đ"
+                            span(class="price-cost text-muted")=val.pricesale+" "+"đ"
+        if(product=="sale")
+            div(class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4")
+                div(class="card floating-product__card mt-2 mb-3")
+                    div(class="floating-product__image")
+                        img(src=val.src, class="card-img-top", alt="card1")
+                        if(val.isNew==true)
+                            div(class="status__product status-new text-white") 
+                                span NEW
+                        else if(val.isNew==false)
+                            div(class="status__product status-sale text-white") 
+                                span -50%
+                        else if(val.isNew=="none")
+                            div(class="status__product status-sale text-white d-none")
+                        div(class="floating-product__overlay")
+                            div(class="button-group w-100 d-flex justify-content-center align-items-center")
+                                a(href="", class="btn rounded-pill btn-full mr-3") MUA NGAY 
+                                a(href="", class="p-3 bg-white rounded-circle text-dark")
+                                    i(class="fas fa-search") 
+                    div(class="card-body text-center")
+                        h5(class="card-title")=val.name
+                        div(class="card-rate")
+                            ul(class="rate-list d-flex align-items-center justify-content-center")
+                                -var count=0+0.5;
+                                while count<val.star
+                                    li(class="rate-item mr-1")
+                                        i(class="fas fa-star")
+                                    - count++;
+                                    if(count==val.star)
+                                        li(class="rate-item mr-1")
+                                            i(class="fas fa-star-half")
+                        div(class="card-price mt-3")
+                            span(class="price-sale mr-3")=val.price+" "+"đ"
+                            span(class="price-cost text-muted")=val.pricesale+" "+"đ"
+        if(product=="more")
+            li(class="hot-product-item mt-3")
+                div(class="card p-3")
+                    div(class="row no-gutters")
+                        div(class="col-md-5")
+                            img(src=val.src, alt="...", class="h-100")
+                        div(class="col-md-7")
+                            div(class="card-body")
+                                h5(class="card-title")=val.name
+                                div(class="card-rate")
+                                    ul(class="rate-list d-flex align-items-center")
+                                        -var count=0+0.5;
+                                        while count<val.star
+                                            li(class="rate-item mr-1")
+                                                i(class="fas fa-star")
+                                            - count++;
+                                            if(count==val.star)
+                                                li(class="rate-item mr-1")
+                                                    i(class="fas fa-star-half")
+                                div(class="card-price mt-3")
+                                    span(class="price-sale mr-3")=val.price+" "+"đ"
+
+- var newslist=[{title:"15 trang thiết kế phòng ngủ đẹp vạn người mê", url:"news1.png", des:"Cùng Sài Gòn Hoa tìm hiểu một vài xu hướng thiết kế sân vườn được ưa chuộng nhất hiện nay nhé! Kết hợp hàng rào"}, {title:"Tạo tiểu cảnh góc sân cho nhà phố, biệt thự đẹp", url:"news2.png", des:"Khi bước từ ngoài vào ngõ hay từ trong nhà đi ra, góc sân vẫn luôn là điểm nhìn đầu tiên của chúng ta"}, {title:"Cách bố trí hoa chậu trước cửa ấn tượng", url:"news3.png", des:"Như thể hiện sự thân thiện cũng như sự hiếu khách của gia chủ, phần không gian trước cửa"}];
+
+mixin renderNews()
+    each val in newslist
+        div(class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4")
+            div(class="card mt-3")
+                div(class="card-img")
+                    img(src="./images/"+val.url, class="card-img-top", alt="...")
+                div(class="card-body")
+                    time(class="time text-muted")=val.time
+                    span(class="card-title d-block mt-3")=val.title
+                    p(class="card-des text-muted")=val.des
+                    a(href="",class="d-block mt-3 news-link text-dark") Đọc tiếp ...
+
+mixin renderInput(type="email", placeholder="Nhập email của bạn vào đây")
+    div(class="input-component")
+        div(class="input-group")
+            input(class="form-control px-4", type=type, placeholder=placeholder)
+            div(class="input-group-append")
+                button(type="button", class="px-4 text-white btn")
+                    i(class="fas fa-paper-plane")
+
+mixin renderBreadCrumb(levelList=[{name:"Trang chủ",url:"index.html"},{name:"Danh sách sản phẩm",url:"productlist.html"}])
+    nav(aria-label="breadcrumb")
+        ol(class="breadcrumb bg-transparent pl-0")
+            if(levelList.length==1)
+                li(class="breadcrumb-item active", aria-current="page")=val.name
+            else
+                each val,index in levelList
+                    if(levelList.length==index+1)
+                        li(class="breadcrumb-item active", aria-current="page")=val.name
+                    else if(levelList.length>=index)
+                        li(class="breadcrumb-item")
+                            a(href=val.url)=val.name
+
+
+mixin renderProductCategory(name="Cây chậu treo", url="index.html", list=[{name:"Cây chậu treo 1", url:"index.html"}, {name:"Cây chậu treo 2", url:"index.html"}])
+    li(class="product-category__item mt-3 py-3")
+        a(href=url, class="d-flex align-items-center")
+            i(class="fas fa-chevron-right mr-2")
+            span(class="mr-2")=name
+            if(list.length>1)
+                span="("+list.length+")"
+            each value in list
+                if(list.length>0) 
+                    div(class="dropdownCategory pl-3 pt-2")
+                        ul(class="dropdownCategory__list")
+                            li(class="dropdownCategory__item py-2")
+                                a(href=value.url, class="d-flex align-items-center")
+                                    i(class="fas fa-chevron-right mr-2")
+                                    span=value.name
+
+mixin renderFindPrice(start="200.000", end="400.000")
+    li(class="product-category__item mt-3 py-3")
+        span(class="d-flex align-items-center")
+                i(class="fas fa-chevron-right mr-2")
+                span(class="mr-2")=start+ "Đ" +" - "+ end+" "+"Đ"
+
+mixin renderProductListColor()
+    each val in productListColor 
+        li(class="productlist__color-item d-flex align-items-center w-50 mt-3")
+            span(class="color d-inline-block mr-2 rounded-circle",style="background-color:"+val.color+";")
+            span(class="color-title")=val.name
+

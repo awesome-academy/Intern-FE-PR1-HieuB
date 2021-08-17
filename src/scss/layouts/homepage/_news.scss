@@ -1,0 +1,45 @@
+section.news {
+    .card {
+        .card-img {
+            max-height: 22rem;
+            overflow: hidden;
+        }
+
+        img {
+            transition: 0.5s;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+                transition: 0.5s;
+            }
+        }
+
+        .card-body {
+            time {
+                font-style: italic;
+                font-size: 1.3rem;
+            }
+
+            .card-title {
+                font-size: 1.5rem;
+                color: $primary-color;
+                font-weight: bold;
+            }
+
+            .card-des {
+                font-size: 1.3rem;
+            }
+
+            a.news-link {
+                font-size: 1.5rem;
+                font-style: italic;
+                font-weight: bold;
+                color: $primary-color !important;
+                width: fit-content;
+            }
+        }
+    }
+}
+
