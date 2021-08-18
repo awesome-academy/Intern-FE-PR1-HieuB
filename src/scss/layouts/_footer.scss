@@ -1,48 +1,48 @@
 footer.footer {
     background-color: $bg-dark;
+
     @include minWidth($md) {
         .footer-bottom,
         .footer-copyright {
             display: block !important;
         }
     }
+
     .footer-top {
         border-bottom: solid 1px $gray-color-light;
+
         .footer__social-network {
             span {
                 font-size: 1.3rem;
                 color: $gray-color;
             }
+
             ul {
                 padding-top: 1rem;
+
                 .icon-link {
                     font-size: 1.6rem;
                     color: $gray-color;
+                    transition: 0.5s;
+
+                    &:hover {
+                        color: white;
+                        transition: 0.5s;
+                    }
                 }
             }
         }
+
         .footer__email-input {
             h2 {
                 font-size: 1.3rem;
                 color: $gray-color;
             }
-            .footer__email-input-box {
-                input {
-                    font-size: 1.8rem;
-                }
-                button {
-                    font-size: 1.3rem;
-                    background-color: $primary-color;
-                    border-color: $primary-color !important;
-                    &focus {
-                        border-color: $primary-color !important;
-                    }
-                }
-            }
         }
     }
     .footer-main {
         border-bottom: solid 1px $gray-color-light;
+
         .footer__brand-box {
             @include minWidth($xs) {
                 .footer__brand-title,
@@ -50,43 +50,58 @@ footer.footer {
                     text-align: left !important;
                 }
             }
+
             @include minWidth($md) {
                 .footer__contact {
                     display: block !important;
                 }
             }
+
             .footer__brand-title {
                 font-size: 3.8rem;
                 color: $primary-color;
+
                 span {
                     font-family: $ballet-font;
                 }
             }
+
             .footer__brand-slogan {
                 font-size: 1.8rem;
                 color: $gray-color;
             }
+
             .footer__brand-des {
                 font-size: 1.1rem;
                 line-height: 1.2;
                 color: $silver-color;
             }
+
             .footer__contact {
                 display: none;
                 font-size: 1.1rem;
                 color: $silver-color;
             }
         }
+
         .footer__list-box {
             .list-box__title {
                 color: $primary-color;
                 font-size: 1.2rem;
             }
+
             .list-box__list {
                 li {
                     a {
                         color: $silver-color;
                         font-size: 1.2rem;
+                        transition: 0.5s;
+
+                        &:hover {
+                            color: $primary-color;
+                            transition: 0.5s;
+                        }
+
                         i {
                             font-size: 0.8rem;
                         }
@@ -95,14 +110,23 @@ footer.footer {
             }
         }
     }
+
     .footer-bottom {
         display: none;
+
         .footer-bottom__list {
             font-size: 1.2rem;
+
             .footer-bottom-item {
                 a,
                 i {
                     color: $silver-color;
+                    transition: 0.5s;
+
+                    &:hover {
+                        color: white;
+                        transition: 0.5s;
+                    }
                 }
                 i {
                     font-size: 1.4rem;
@@ -110,6 +134,7 @@ footer.footer {
             }
         }
     }
+
     .footer-copyright {
         display: none;
         color: $silver-color;

@@ -1,0 +1,13 @@
+mixin renderBreadCrumb(levelList=[])
+    div(class="breadcrumb-wrapper py-3")
+        nav(aria-label="breadcrumb")
+            ol(class="breadcrumb bg-transparent pl-0")
+                if(levelList.length==1)
+                    li(class="breadcrumb-item active", aria-current="page")=val.name
+                else
+                    each val,index in levelList
+                        if(levelList.length==index+1)
+                            li(class="breadcrumb-item active", aria-current="page")=val.name
+                        else if(levelList.length>=index)
+                            li(class="breadcrumb-item")
+                                a(href=val.url)=val.name

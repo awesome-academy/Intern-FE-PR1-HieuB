@@ -1,8 +1,15 @@
-@import "base/base";
 @import "base/variables";
-@import "base/global";
 @import "base/mixins";
+@import "base/base";
+@import "base/global";
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/homepage/banner";
+@import "layouts/homepage/saleproduct";
+@import "layouts/homepage/news";
+@import "components/popup";
 @import "components/pagination";
+@import "components/button";
+@import "components/carousel";
+@import "components/input";
+@import "components/breadcrumb";

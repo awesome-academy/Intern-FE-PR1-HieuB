@@ -1,0 +1,15 @@
+.input-component {
+    input {
+        font-size: 1.8rem;
+    }
+
+    button.btn {
+        font-size: 1.3rem;
+        background-color: $primary-color;
+        border-color: $primary-color;
+
+        &focus {
+            border-color: $primary-color;
+        }
+    }
+}

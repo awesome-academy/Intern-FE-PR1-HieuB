@@ -1,10 +1,145 @@
-// slideshow
-.carousel-indicators {
-    li {
-        width: 1.3rem;
-        height: 1.3rem;
-        &.active {
-            background-color: $primary-color
+// product
+.floating-product__card {
+    cursor: pointer;
+
+    .floating-product__image {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            .floating-product__overlay {
+                transform: translateX(0);
+                transition: 0.5s;
+            }
+        }
+
+        .status__product {
+            width: 3rem;
+            height: 3rem;
+            top: 5%;
+            left: 5%;
+            border-radius: 50%;
+            background-color: $primary-color;
+            text-align: center;
+            position: absolute;
+
+            @include minWidth($md) {
+                width: 6rem;
+                height: 6rem;
+
+                span {
+                    font-size: 1.4rem !important;
+                }
+            }
+
+            span {
+                position: absolute;
+                font-size: 1rem;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .status__product.status-sale {
+            background-color: $color-red;
+        }
+
+        .floating-product__overlay {
+            position: absolute;
+            background-color: $bg-dark-light;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            transform: translateX(-100%);
+        }
+
+        .button-group {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .card-body {
+        .card-title {
+            font-size: 1.2rem;
+            text-align: center;
+
+            @include minWidth($md) {
+                font-size: 1.7rem !important;
+            }
+        }
+        .card-rate {
+            ul.rate-list {
+                li.rate-item {
+                    i {
+                        font-size: 1rem;
+                        color: $color-orange;
+
+                        @include minWidth($md) {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .card-price {
+            @include minWidth($md) {
+                span {
+                    font-size: 1.7rem !important;
+                }
+            }
+
+            span {
+                font-size: 1rem;
+                color: red;
+            }
+
+            span.price-cost {
+                text-decoration: line-through;
+            }
+        }
+
+        .card-description {
+            font-size: 1.5rem;
+            color: $gray-color;
+            line-height: 1.2;
+        }
+    }
+}
+
+.section__title {
+    font-size: 1.8rem;
+    color: $primary-color;
+    font-weight: bold;
+    border-bottom: solid 1px $gray-color-light;
+
+    .button-group {
+        a {
+            color: $gray-color;
+        }
+
+        i {
+            font-size: 1.6rem;
+        }
+    }
+
+    h2 {
+        position: relative;
+        width: fit-content;
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 3px;
+            background-color: $primary-color;
+            bottom: -1.2rem;
+            left: 0;
         }
     }
 }

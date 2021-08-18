@@ -1,4 +1,4 @@
-header(class="header")
+header.header
         div(class="header__top p-3 bg-dark")
             div(class="container d-flex justify-content-between align-items-center")
                 div(class="header__time-social d-flex align-items-center")
@@ -6,14 +6,14 @@ header(class="header")
                         i(class="far fa-clock mr-3")
                         span Open time: 
                             time 8:00 - 18:00 Monday - Sunday
-                    div(class="header__social")
+                    .header__social
                         +renderListIcon
                 div(class="header__login-register d-flex align-items-center")
                     div(class="header__login mr-4")
                         a(href="login.html", class="header__link-login d-flex align-items-center")
                             i(class="fas fa-user mr-2")
                             span Đăng nhập
-                    div(class="header__register")
+                    div.header__register
                         a(href="register.html", class="header__link-register d-flex align-items-center")
                             i(class="fas fa-user-plus mr-2")
                             span Đăng ký
@@ -22,7 +22,7 @@ header(class="header")
                 div(class="row align-items-center justify-content-center")
                     div(class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6")
                         div(class="d-flex align-items-center local__brand justify-content-center")
-                            div(class="brand__title")
+                            div.brand__title
                                 h1(class="brand__name")="Green"+" "
                                     span Shop
                                 span(class="brand__slogan mt-3 d-inline-block") Món quà từ thiên nhiên
@@ -40,10 +40,10 @@ header(class="header")
                                     button(type="button", class="rounded-pill px-4 bg-white")
                                         i(class="fa fa-search")
                             div(class="")
-                                a(href="",class="header__cart d-flex align-items-center") 
+                                a(href="", class="header__cart d-flex align-items-center") 
                                     i(class="fas fa-shopping-basket mr-3")
                                     span 0 Sản phẩm
-        div(class="header__navbar")
+        div.header__navbar
             .container
                 nav(class="navbar navbar-expand-lg navbar-light py-3")
                     button(class="navbar-toggler navbar__icon", type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
@@ -53,9 +53,9 @@ header(class="header")
                     
                     //- navbar__pc
                     div(class="collapse navbar-collapse", id="navbarNav")
-                        ul(class="navbar-nav")
+                        ul.navbar-nav
                             each val in navbarItem
-                                +renderHeaderNavbar(val.name, val.url,val.isActive,val.isDropDown)
+                                +renderHeaderNavbar(val.name, val.url, val.isActive, val.isDropDown, val.dropdownList)
                             li(class="nav-item nav-item__login-register active mr-4 py-3")
                                 a(class="nav-link text-white", href="login.html") ĐĂNG NHẬP
                             li(class="nav-item nav-item__login-register active mr-4 py-3")

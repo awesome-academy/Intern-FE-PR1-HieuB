@@ -1,0 +1,11 @@
+// slideshow
+.carousel-indicators {
+    li {
+        width: 1.3rem;
+        height: 1.3rem;
+
+        &.active {
+            background-color: $primary-color;
+        }
+    }
+}
