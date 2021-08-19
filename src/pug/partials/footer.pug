@@ -2,22 +2,22 @@ footer.footer
     div(class="footer-top pb-5")
         .container
             .row
-                div(class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4")
+                div(class="col-12 col-lg-4")
                     div(class="footer__social-network pr-4 pt-5")
                         span(class="d-block") KÊNH HỆ THỐNG THÔNG TIN TỪ CHÚNG TÔI 
                         +renderListIcon()
-                div(class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8")
+                div(class="col-12 col-lg-8")
                     div(class="footer__email-input pt-5")
                         .row
-                            div(class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3")
+                            div(class="col-12 col-lg-3")
                                 div(class="footer__email-input-title pr-4 pb-3")
                                     h2 ĐĂNG KÝ NHẬN EMAIL TỪ CHÚNG TÔI
-                            div(class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9")
+                            div(class="col-12 col-lg-9")
                                 +renderInput("text","")
     div(class="footer-main py-5")
         .container
             .row
-                div(class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4")
+                div(class="col-12 col-md-4")
                     .footer__brand-box
                         h2(class="footer__brand-title text-center")="Green"+" "
                             span Shop
@@ -31,7 +31,7 @@ footer.footer
                                 i(class="far fa-envelope mr-3")
                                 span Email: info@dkt.com.vn
                                 
-                div(class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8")
+                div(class="col-12 col-md-8")
                     .row
                         +renderListFooter()
     div(class="footer-bottom pb-3")
@@ -41,7 +41,4 @@ footer.footer
                 +renderFooterBottomVisa
     div(class="footer-copyright py-3 text-center bg-dark")
         span Thiết kế bởi Bizweb 
-        i(class="far fa-copyright")
-
-
-            
+        i(class="far fa-copyright")          

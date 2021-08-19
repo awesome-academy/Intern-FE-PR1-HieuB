@@ -1,0 +1,12 @@
+extends ../layouts/default-layout
+block mixins
+	include ../partials/mixins
+	include ../partials/breadcrumb
+	
+block vars
+	-title = 'Hello everyone'
+	-bodyClass = 'productlist'
+	-des='Đây là project 1 productlist'
+
+block container
+	include ../partials/productlist/productlistwrapper
