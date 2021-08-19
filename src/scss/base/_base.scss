@@ -1,38 +1,37 @@
 html {
-    font-size: 62.5%;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    height: 100%;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .btn {
-    padding: 0.8rem 2rem;
+  padding: 0.8rem 2rem;
 }
 
 img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 button,
 input {
-    box-shadow: none;
-    outline: none;
-    border-color: white;
+  box-shadow: none;
+  outline: none;
+  border-color: white;
 }
 
 input:focus,
 button:focus {
-    outline: none;
-    box-shadow: unset;
-    border-color: white;
+  outline: none;
+  box-shadow: unset !important;
+  border-color: white;
 }
-

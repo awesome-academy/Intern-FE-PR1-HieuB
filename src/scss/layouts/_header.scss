@@ -30,10 +30,12 @@ header.header {
                 }
             }
         }
+
         @include minWidth($lg) {
             display: block;
         }
     }
+
     .header__main {
         background-color: rgba(128, 128, 128, 0.171);
 
@@ -66,14 +68,15 @@ header.header {
                 height: 100%;
             }
         }
+
         .header__info-cart {
             display: none;
 
             span {
                 color: $gray-color;
             }
-            // visibility: hidden;
         }
+
         @include minWidth($lg) {
             .brand__img {
                 display: block;
@@ -81,7 +84,6 @@ header.header {
 
             .header__info-cart {
                 display: block;
-                // visibility: visible;
             }
 
             .local__brand {
@@ -118,6 +120,7 @@ header.header {
             color: $gray-color;
         }
     }
+
     .header__navbar {
         background-color: $primary-color;
 
@@ -149,7 +152,6 @@ header.header {
 
         .dropdown-menu {
             min-width: 15rem;
-
             .dropdown-item {
                 font-size: 1.6rem;
             }
@@ -170,4 +172,3 @@ header.header {
         }
     }
 }
-

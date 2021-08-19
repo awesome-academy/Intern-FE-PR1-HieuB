@@ -19,6 +19,7 @@ footer.footer {
 
             ul {
                 padding-top: 1rem;
+
                 .icon-link {
                     font-size: 1.6rem;
                     color: $gray-color;
@@ -43,7 +44,6 @@ footer.footer {
         border-bottom: solid 1px $gray-color-light;
 
         .footer__brand-box {
-
             @include minWidth($xs) {
                 .footer__brand-title,
                 .footer__brand-slogan {
@@ -122,12 +122,12 @@ footer.footer {
                 i {
                     color: $silver-color;
                     transition: 0.5s;
+
                     &:hover {
                         color: white;
                         transition: 0.5s;
                     }
                 }
-
                 i {
                     font-size: 1.4rem;
                 }
@@ -141,4 +141,3 @@ footer.footer {
         font-size: 1.2rem;
     }
 }
-

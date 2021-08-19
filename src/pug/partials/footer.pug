@@ -1,24 +1,24 @@
-footer(class="footer")
+footer.footer
     div(class="footer-top pb-5")
-        div(class="container")
-            div(class="row")
+        .container
+            .row
                 div(class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4")
                     div(class="footer__social-network pr-4 pt-5")
                         span(class="d-block") KÊNH HỆ THỐNG THÔNG TIN TỪ CHÚNG TÔI 
                         +renderListIcon()
                 div(class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8")
                     div(class="footer__email-input pt-5")
-                        div(class="row")
+                        .row
                             div(class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3")
                                 div(class="footer__email-input-title pr-4 pb-3")
                                     h2 ĐĂNG KÝ NHẬN EMAIL TỪ CHÚNG TÔI
                             div(class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9")
                                 +renderInput("text","")
     div(class="footer-main py-5")
-        div(class="container")
-            div(class="row")
+        .container
+            .row
                 div(class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4")
-                    div(class="footer__brand-box")
+                    .footer__brand-box
                         h2(class="footer__brand-title text-center")="Green"+" "
                             span Shop
                         span(class="footer__brand-slogan mt-2 d-block text-center") Món quà từ thiên nhiên
@@ -32,10 +32,10 @@ footer(class="footer")
                                 span Email: info@dkt.com.vn
                                 
                 div(class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8")
-                    div(class="row")
+                    .row
                         +renderListFooter()
     div(class="footer-bottom pb-3")
-        div(class="container")
+        .container
             div(class="d-flex justify-content-between align-items-center flex-wrap")
                 +renderFooterBottomList
                 +renderFooterBottomVisa
