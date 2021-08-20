@@ -36,3 +36,12 @@ section(class="productList-wrapper py-4")
                         form(class="form-inline")
                             +renderSelectForm
                             +renderSelectForm("Show","showCount", true, 15)
+                div.tab-content#pills-tabContent
+                    div(class="productlist-content__grid tab-pane fade show active", id="pills-grid" role="tabpanel", aria-labelledby="pills-listproduct-grid-tab")
+                        div.row
+                            +renderfloatingProductGrid("sale")
+                    div(class="productlist-content__list tab-pane fade show", id="pills-list" role="tabpanel", aria-labelledby="pills-listproduct-list-tab")
+                        div.row
+                            +renderfloatingProductList()
+                div(class="d-flex justify-content-end mt-4")
+                    +renderPagination
