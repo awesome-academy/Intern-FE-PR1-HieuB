@@ -33,5 +33,5 @@ input:focus,
 button:focus {
     outline: none;
     box-shadow: unset !important;
-    border-color: white;
+    border-color: $primary-color !important;
 }
