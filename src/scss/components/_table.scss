@@ -1,11 +1,12 @@
 table.table {
-    thead {
+    thead,
+    tfoot {
         tr {
             th {
                 background-color: $primary-color;
                 font-size: 1.6rem;
                 font-weight: bold;
-                min-width: 10rem;
+                min-width: 15rem;
             }
         }
     }
@@ -31,6 +32,14 @@ table.table {
                     height: 5rem;
                 }
             }
+        }
+    }
+}
+
+.table-medium {
+    @include minWidth($lg) {
+        .table-responsive {
+            width: 50%;
         }
     }
 }

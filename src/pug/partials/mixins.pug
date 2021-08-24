@@ -174,25 +174,26 @@ mixin renderfloatingProductGrid(product="new")
                             span(class="price-cost text-muted")=val.pricesale+" "+"đ"
         if(product=="more")
             li(class="hot-product-item mt-3")
-                div(class="card p-3")
-                    div(class="row no-gutters")
-                        div(class="col-md-5")
-                            img(src=val.src, alt="...", class="h-100")
-                        div(class="col-md-7")
-                            .card-body
-                                h5.card-title=val.name
-                                .card-rate
-                                    ul(class="rate-list d-flex align-items-center")
-                                        -var count=0+0.5;
-                                        while count<val.star
-                                            li(Class="rate-item mr-1")
-                                                i(class="fas fa-star")
-                                            - count++;
-                                            if(count==val.star)
+                a(href="productdetail.html") 
+                    div(class="card p-3")
+                        div(class="row no-gutters")
+                            div(class="col-md-5")
+                                img(src=val.src, alt="...", class="h-100")
+                            div(class="col-md-7")
+                                .card-body
+                                    h5.card-title=val.name
+                                    .card-rate
+                                        ul(class="rate-list d-flex align-items-center")
+                                            -var count=0+0.5;
+                                            while count<val.star
                                                 li(Class="rate-item mr-1")
-                                                    i(class="fas fa-star-half")
-                                div(class="card-price mt-3")
-                                    span(class="price-sale mr-3")=val.price+" "+"đ"
+                                                    i(class="fas fa-star")
+                                                - count++;
+                                                if(count==val.star)
+                                                    li(Class="rate-item mr-1")
+                                                        i(class="fas fa-star-half")
+                                    div(class="card-price mt-3")
+                                        span(class="price-sale mr-3")=val.price+" "+"đ"
 mixin renderfloatingProductList()
     each val in floatingproduct
         div(class="col-12")
