@@ -1,0 +1,14 @@
+section.productnews-wrapper {
+    .news-item {
+        .card {
+            border: none;
+
+            .card-body {
+                .card-title {
+                    font-size: 1.3rem;
+                    color: $dark-gray-color;
+                }
+            }
+        }
+    }
+}

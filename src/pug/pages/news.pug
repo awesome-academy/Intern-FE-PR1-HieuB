@@ -1,0 +1,14 @@
+extends ../layouts/default-layout
+
+block mixins
+	include ../partials/mixins
+	include ../partials/breadcrumb
+	include ../partials/button
+block vars
+	-title = 'Hello everyone'
+	-bodyClass = 'productnews'
+	-des='Đây là project 1 product news'
+
+block container
+	include ../partials/news/newswrapper
+	
