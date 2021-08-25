@@ -256,19 +256,19 @@ mixin renderNews(display = "grid", count = 3)
             if(index < count)
                 .news-content__item.mb-5 
                     h5.news-content__title=val.title
-                    .button-group 
-                        div.inline-block 
-                            i(class="far fa-calendar-minus")
+                    .button-group.mt-2(class="d-flex align-items-center flex-wrap") 
+                        div.inline-block.mr-5.mt-3 
+                            i(class="far fa-calendar-minus mr-2")
                             time=val.date
-                        div.inline-block
-                            i(class="far fa-clock")
+                        div.inline-block.mr-5.mt-3
+                            i(class="far fa-clock mr-2")
                             time=val.time
-                        div.inline-block
-                            i(class="far fa-comment-dots")
+                        div.inline-block.mr-5.mt-3
+                            i(class="far fa-comment-dots mr-2")
                             span=val.comment
-                    .news-content__img 
+                    .news-content__img.mt-4 
                         img(src="./images/"+val.image, alt=val.image)
-                    .news-content__des 
+                    .news-content__des.mt-4 
                         p=val.des
 
 mixin renderInput(type = "email", placeholder = "Nhập email của bạn vào đây", button = true)
@@ -293,9 +293,9 @@ mixin renderProductCategory(list = productcategorylist)
                         span="("+val.list.length+")"
                     each value in val.list
                         if(list.length > 0) 
-                            div(class="dropdownCategory pl-3 pt-2")
-                                ul.dropdownCategory__list
-                                    li(class="dropdownCategory__item py-2")
+                            div(class="dropdown-category pl-3 pt-2")
+                                ul.dropdown-category__list
+                                    li(class="dropdown-category__item py-2")
                                         a(href=value.url, class="d-flex align-items-center")
                                             i(class="fas fa-chevron-right mr-2")
                                             span=value.name
