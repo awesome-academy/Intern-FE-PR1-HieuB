@@ -1,0 +1,13 @@
+.breadcrumb {
+    &-item {
+        font-size: 1.6rem;
+
+        a {
+            color: $gray-color;
+        }
+
+        &.active {
+            color: $primary-color;
+        }
+    }
+}

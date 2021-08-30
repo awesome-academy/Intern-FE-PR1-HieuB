@@ -1,0 +1,13 @@
+mixin breadCrumb(levelList=[])
+    section.py-3
+        nav(aria-label="breadcrumb")
+            ol.breadcrumb.bg-transparent.pl-0
+                if(levelList.length == 1)
+                    li.breadcrumb-item.active(aria-current="page")=val.name
+                else
+                    each val,index in levelList
+                        if(levelList.length == index+1)
+                            li.breadcrumb-item.active(aria-current="page")=val.name
+                        else if(levelList.length >= index)
+                            li.breadcrumb-item
+                                a(href=val.url)=val.name

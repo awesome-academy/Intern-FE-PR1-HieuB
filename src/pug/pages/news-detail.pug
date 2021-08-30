@@ -1,0 +1,38 @@
+extends ../base/default-layout
+
+block vars
+	-title = 'Hello everyone'
+	-bodyClass = 'news'
+	-des='Đây là project 1 news'
+
+block container
+	section.news-detail.py-4
+		.container 
+			+breadCrumb([{name:"Trang chủ", url:"index.html"}, {name:"Chi tiết tin tức", url:"newsdetail.html"}])
+			.row
+				.col-12.col-md-4.col-lg-3
+					.product-list__sidebar.mt-4
+						.row
+							.col-12
+								.product__category
+									.section__title.mb-4.pb-3
+										h2 Danh mục sản phẩm
+									+productCategory
+							.col-12
+								.product__category.mt-5
+									.section__title.mb-4.pb-3
+										h2 Tin tức nổi bật
+									ul
+										+news("sidebar",5)
+							.col-12
+								.product__category.mt-5
+									.section__title.mb-4.pb-3
+										h2 Blog tag
+									+blogTag
+				.col-12.col-md-8.col-lg-9
+					.news-content__list.mt-4
+						+news("list",1,[{title:"Hướng dẫn chọn và trang trí cây xanh trong phòng khách", image:"news1.png", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque itaque reprehenderit quod similique sunt architecto odit minus, inventore deserunt mollitia ipsa animi, aliquid, pariatur illo nesciunt tempora amet cumque.", date:"29/12/2015", time:"11:20:00", comment:0}])
+					.mt-5
+						+commentList()
+					.mt-5 
+						+writeComment()

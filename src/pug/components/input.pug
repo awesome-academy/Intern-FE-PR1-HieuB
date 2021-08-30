@@ -1,0 +1,47 @@
+mixin selectForm(title = "Sắp xếp theo", id = "productlist-select", isCustom = false, number = 15)
+    .d-flex.align-items-center.input-box
+        label.my-1.mr-2(for=id)=title
+        select.form-control.my-1(id=id)
+            if(isCustom == false)
+                each val in selectList
+                    option(value=val.value)=val.name
+            else
+                - var temp=1;
+                while temp <= number
+                    option(value=temp)=temp
+                    - temp++
+
+mixin inputWithLabel(type = "text", placeholder = "", id = "", nameLabel = "", required = false)
+    if(type == "checkbox")
+        .input-component.checkbox
+            .form-group.form-check.pt-3.d-flex.align-items-center
+                input.form-check-input(type=type, id=id, placeholder=placeholder)
+                label.form-check-label.ml-2(for=id)=nameLabel
+    else
+        .input-component.mt-5
+            .form-group
+                label.mb-3(for=id)=nameLabel
+                    if(required == true)
+                        span *
+                input.form-control(type=type, id=id, placeholder=placeholder)
+
+mixin textArea(placeholder = "", rows = "", label = false, nameLabel = "", required = false, id = "")
+    if(label == false)
+        .input-component
+            textarea.form-control(rows=rows, placeholder=placeholder, id=id)
+    else 
+        .input-component.mt-5 
+            .form-group
+                label.mb-3(for=id)=nameLabel
+                    if(required == true)
+                        span *
+                textarea.form-control(rows=rows, placeholder=placeholder, id=id)
+
+mixin input(type = "email", placeholder = "Nhập email của bạn vào đây", button = true)
+    .input-component
+        .input-group
+            input.form-control.px-4(type=type, placeholder=placeholder)
+            if(button == true)
+                .input-group-append
+                    button.px-4.text-white.btn(type="button")
+                        i(class="fas fa-paper-plane")

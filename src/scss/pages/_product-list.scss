@@ -1,0 +1,31 @@
+section.product-list {
+    .productlist__tab-panel {
+        .btn-group {
+            button {
+                font-size: 1.5rem;
+                color: $gray-color;
+
+                &.active {
+                    color: $primary-color;
+                }
+            }
+        }
+        .productlist-filter {
+            form.form-inline {
+                label,
+                select {
+                    font-size: 1.4rem;
+                    width: max-content;
+                }
+
+                .input-box {
+                    padding-left: 0rem;
+
+                    @include minWidth($md) {
+                        padding-left: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

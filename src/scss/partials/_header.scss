@@ -1,0 +1,147 @@
+header.header {
+    .header__top {
+        display: none;
+        color: $gray-color;
+
+        .header__login-register {
+            a {
+                color: $gray-color;
+                transition: 0.5s;
+
+                &:hover {
+                    color: white;
+                    transition: 0.5s;
+                }
+            }
+        }
+
+        @include minWidth($lg) {
+            display: block;
+        }
+    }
+
+    .header__main {
+        background-color: rgba($bg-dark, 0.171);
+
+        h1.brand__name {
+            color: $primary-color;
+            font-size: 4.4rem;
+
+            span {
+                font-weight: lighter;
+                font-family: $ballet-font;
+            }
+        }
+
+        .info-help {
+            font-size: 1.6rem;
+        }
+
+        .brand__slogan {
+            font-size: 1.8rem;
+            color: $primary-color;
+        }
+
+        .brand__img {
+            max-width: 15rem;
+            max-height: 15rem;
+            display: none;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .header__info-cart {
+            display: none;
+
+            span {
+                color: $gray-color;
+            }
+        }
+
+        @include minWidth($lg) {
+            .brand__img {
+                display: block;
+            }
+
+            .header__info-cart {
+                display: block;
+            }
+
+            .local__brand {
+                justify-content: flex-start !important;
+            }
+
+            .brand__slogan {
+                color: $gray-color;
+            }
+        }
+
+        .input__search {
+            max-width: 60%;
+
+            input {
+                border-bottom-right-radius: unset !important;
+                border-top-right-radius: unset !important;
+                font-size: 1.6rem;
+                border: none;
+                box-shadow: none;
+                border-right: solid 1px $gray-color-light !important;
+            }
+
+            button {
+                border-bottom-left-radius: unset !important;
+                border-top-left-radius: unset !important;
+                border: none;
+                box-shadow: none;
+            }
+        }
+
+        .header__cart {
+            font-size: 1.6rem;
+            color: $gray-color;
+        }
+    }
+
+    .header__navbar {
+        background-color: $primary-color;
+
+        label.navbar__icon {
+            font-size: 1.8rem;
+        }
+
+        .navbar-icon__pc {
+            display: none;
+        }
+
+        .navbar__icon {
+            font-size: 1.6rem;
+            border: unset;
+        }
+
+        .nav-item__login-register {
+            display: block;
+        }
+
+        .menu__tablet {
+            font-size: 1.6rem;
+            display: block;
+        }
+
+        @include minWidth($lg) {
+            .navbar-icon__pc {
+                display: block;
+            }
+
+            .nav-item__login-register {
+                display: none;
+            }
+
+            .menu__tablet {
+                display: none !important;
+            }
+        }
+    }
+}

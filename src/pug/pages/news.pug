@@ -1,14 +1,35 @@
-extends ../layouts/default-layout
+extends ../base/default-layout
 
-block mixins
-	include ../partials/mixins
-	include ../partials/breadcrumb
-	include ../partials/button
 block vars
 	-title = 'Hello everyone'
-	-bodyClass = 'productnews'
-	-des='Đây là project 1 product news'
+	-bodyClass = 'news'
+	-des='Đây là project 1 news'
 
 block container
-	include ../partials/news/newswrapper
+	section.news.py-4
+		.container
+			+breadCrumb([{name:"Trang chủ", url:"index.html"}, {name:"Tin tức", url:"news.html"}])
+			.row
+				.col-12.col-md-4.col-lg-3
+					.product-list__sidebar.mt-4
+						.row
+							.col-12
+								.product__category
+									.section__title.mb-4.pb-3
+										h2 Danh mục sản phẩm
+									+productCategory
+							.col-12
+								.product__category.mt-5
+									.section__title.mb-4.pb-3
+										h2 Tin tức nổi bật
+									ul
+										+news("sidebar",5)
+							.col-12
+								.product__category.mt-5
+									.section__title.mb-4.pb-3
+										h2 Blog tag
+									+blogTag
+				.col-12.col-md-8.col-lg-9
+					.news-content__list.mt-4
+						+news("list")
 	

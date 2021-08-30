@@ -1,0 +1,51 @@
+.product-list__sidebar {
+    .product-category__list {
+        .product-category__item {
+            color: $gray-color;
+            cursor: pointer;
+            border-bottom: solid 1px $gray-color-light;
+
+            &:hover {
+                .dropdown-category {
+                    display: block;
+                    animation: fadeIn 1s;
+                }
+            }
+
+            font-size: 1.5rem;
+
+            a {
+                color: $gray-color;
+            }
+
+            i {
+                font-size: 1.1rem;
+            }
+
+            .dropdown-category {
+                display: none;
+
+                .dropdown-category__list {
+                    font-size: 1.3rem;
+                    i {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+    }
+    .productlist__color {
+        &-item {
+            cursor: pointer;
+
+            span.color {
+                width: 4rem;
+                height: 4rem;
+            }
+
+            span {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}

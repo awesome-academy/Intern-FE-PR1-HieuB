@@ -1,70 +1,70 @@
 header.header
-        div(class="header__top p-3 bg-dark")
-            div(class="container d-flex justify-content-between align-items-center")
-                div(class="header__time-social d-flex align-items-center")
-                    div(class="header__time d-flex align-items-center mr-4")
-                        i(class="far fa-clock mr-3")
-                        span Open time: 
-                            time 8:00 - 18:00 Monday - Sunday
-                    .header__social
-                        +renderListIcon
-                div(class="header__login-register d-flex align-items-center")
-                    div(class="header__login mr-4")
-                        a(href="login.html", class="header__link-login d-flex align-items-center")
-                            i(class="fas fa-user mr-2")
-                            span Đăng nhập
-                    div.header__register
-                        a(href="register.html", class="header__link-register d-flex align-items-center")
-                            i(class="fas fa-user-plus mr-2")
-                            span Đăng ký
-        div(class="header__main p-3")
-            .container
-                div(class="row align-items-center justify-content-center")
-                    div(class="col-12 col-md-6")
-                        div(class="d-flex align-items-center local__brand justify-content-center")
-                            div.brand__title
-                                h1(class="brand__name")="Green"+" "
-                                    span Shop
-                                span(class="brand__slogan mt-3 d-inline-block") Món quà từ thiên nhiên
-                            div(class="brand__img")
-                                img(src="./images/pic1.png", alt="img1")
-                    div(class="col-12 col-md-6 header__info-cart")
-                        span(class="d-block info-help")
-                            div(class="d-flex align-items-center")
-                                i(class="fas fa-phone-alt mr-3")
-                                span HỖ TRỢ: (04) 6674 2332 - (04) 3786 8904
-                        div(class="d-flex align-items-center justify-content-between mt-4")  
-                            div(class="input-group input__search")
-                                input(id="Search", class="form-control px-4 rounded-pill", type="search" placeholder="Tìm kiếm ...")
-                                div(class="input-group-append")
-                                    button(type="button", class="rounded-pill px-4 bg-white")
-                                        i(class="fa fa-search")
-                            div
-                                a(href="productcart.html", class="header__cart d-flex align-items-center") 
-                                    i(class="fas fa-shopping-basket mr-3")
-                                    span 0 Sản phẩm
-        div.header__navbar
-            .container
-                nav(class="navbar navbar-expand-lg navbar-light py-3")
-                    button(class="navbar-toggler navbar__icon", type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
-                        i(class="fas fa-bars text-white")
-                    span(class="navbar__icon mr-4 text-white navbar-icon__pc", href="#")
-                        i(class="fas fa-bars")
-                    
-                    //- navbar__pc
-                    div(class="collapse navbar-collapse", id="navbarNav")
-                        ul.navbar-nav
-                            each val in navbarItem
-                                +renderHeaderNavbar(val.name, val.url, val.isActive, val.isDropDown, val.dropdownList)
-                            li(class="nav-item nav-item__login-register active mr-4 py-3")
-                                a(class="nav-link text-white", href="login.html") ĐĂNG NHẬP
-                            li(class="nav-item nav-item__login-register active mr-4 py-3")
-                                a(class="nav-link text-white", href="register.html") ĐĂNG KÍ
-                    //- navbar__tablet
-                    ul(class="menu__tablet d-flex align-items-center")
-                        li(class="mr-5")
-                            a(href="", class="text-white")
-                                i(class="fa fa-search")
-                        li
-                            a(href="productcart.html", class="text-white")
-                                i(class="fas fa-shopping-cart")
+    .header__top.p-3.bg-dark
+        .container.d-flex.justify-content-between.align-items-center
+            .header__time-social.d-flex.align-items-center
+                .header__time.d-flex.align-items-center.mr-4
+                    i.mr-3(class="far fa-clock")
+                    span Open time: 
+                        time 8:00 - 18:00 Monday - Sunday
+                .header__social
+                    +listIcon
+            .header__login-register.d-flex.align-items-center
+                .header__login.mr-4
+                    a.header__link-login.d-flex.align-items-center(href="login.html")
+                        i.mr-2(class="fas fa-user")
+                        span Đăng nhập
+                div.header__register
+                    a.header__link-register.d-flex.align-items-center(href="register.html")
+                        i.mr-2(class="fas fa-user-plus")
+                        span Đăng ký
+    .header__main.p-3
+        .container
+            .row.align-items-center.justify-content-center
+                .col-12.col-md-6
+                    .d-flex.align-items-center.local__brand.justify-content-center
+                        div.brand__title
+                            h1.brand__name="Green"+" "
+                                span Shop
+                            span.brand__slogan.mt-3.d-inline-block Món quà từ thiên nhiên
+                        .brand__img
+                            img(src="./images/pic1.png", alt="img1")
+                .col-12.col-md-6.header__info-cart
+                    span.d-block.info-help
+                        .d-flex.align-items-center
+                            i.mr-3(class="fas fa-phone-alt")
+                            span HỖ TRỢ: (04) 6674 2332 - (04) 3786 8904
+                    .d-flex.align-items-center.justify-content-between.mt-4  
+                        .input-group.input__search
+                            input.form-control.px-4.rounded-pill#Search(type="search" placeholder="Tìm kiếm ...")
+                            .input-group-append
+                                button.rounded-pill.px-4.bg-white(type="button")
+                                    i(class="fa fa-search")
+                        div
+                            a.header__cart.d-flex.align-items-center(href="product-cart.html") 
+                                i.mr-3(class="fas fa-shopping-basket")
+                                span 0 Sản phẩm
+    .header__navbar
+        .container
+            nav.navbar.navbar-expand-lg.navbar-light.py-3
+                button.navbar-toggler.navbar__icon(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+                    i(class="fas fa-bars text-white")
+                span.navbar__icon.mr-4.text-white.navbar-icon__pc(href="#")
+                    i(class="fas fa-bars")
+                
+                //- navbar__pc
+                .collapse.navbar-collapse#navbarNav
+                    ul.navbar-nav
+                        each val in navbarItem
+                            +navBar(val.name, val.url, val.isActive, val.isDropDown, val.dropdownList)
+                        li.nav-item.nav-item__login-register.active.mr-4.py-3
+                            a(class="nav-link text-white", href="login.html") ĐĂNG NHẬP
+                        li.nav-item.nav-item__login-register.active.mr-4.py-3
+                            a(class="nav-link text-white", href="register.html") ĐĂNG KÍ
+                //- navbar__tablet
+                ul.menu__tablet.d-flex.align-items-center
+                    li.mr-5
+                        a.text-white(href="")
+                            i(class="fa fa-search")
+                    li
+                        a.text-white(href="product-cart.html")
+                            i(class="fas fa-shopping-cart")

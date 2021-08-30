@@ -1,0 +1,28 @@
+ul.icon-list {
+    li.icon-item {
+        a.icon-link {
+            color: $gray-color;
+            transition: 0.5s;
+
+            &:hover {
+                color: white;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+.visa-list {
+    .visa-item {
+        i {
+            color: $silver-color;
+            transition: 0.5s;
+            font-size: 1.4rem;
+
+            &:hover {
+                color: white;
+                transition: 0.5s;
+            }
+        }
+    }
+}

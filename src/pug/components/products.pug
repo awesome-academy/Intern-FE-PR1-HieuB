@@ -1,0 +1,125 @@
+mixin productItemContent(data)
+    .card.product-item.mt-2.mb-3
+        .product-item__image
+            img.card-img-top(src=data.src, alt=data.src)
+            if(data.isNew === true)
+                .status__product.status-new.text-white 
+                    span NEW
+            else if(data.isNew === false)
+                .status__product.status-sale.text-white 
+                    span -50%
+            else
+                .status__product.status-sale.text-white.d-none
+            .product-item__overlay
+                .button-group.w-100.d-flex.justify-content-center.align-items-center
+                    a.btn.rounded-pill.btn-full.mr-3(href="product-detail.html") MUA NGAY 
+                    a.p-3.bg-white.rounded-circle.text-dark(href="")
+                        i(class="fas fa-search") 
+        .card-body.text-center
+            h5.card-title=data.name
+            .card-rate
+                ul.rate-list.d-flex.align-items-center.justify-content-center
+                    -var count=0+0.5;
+                    while count < data.star
+                        li.rate-item.mr-1
+                            i(class="fas fa-star")
+                        - count++;
+                        if(count === data.star)
+                            li.rate-item.mr-1
+                                i(class="fas fa-star-half")
+            .card-price.mt-3
+                span.price-sale.mr-3=data.price+" "+"đ"
+                span.price-cost.text-muted=data.pricesale+" "+"đ"
+
+mixin productItem(list)
+    +productItemContent(list)
+
+mixin productItemGrid(product = "new", list = products)
+    each val in list
+        if(product == "new")
+            .col-12.col-md-6.col-lg-3
+                +productItemContent(val)
+        if(product == "sale")
+            .col-12.col-md-6.col-lg-4
+                +productItemContent(val)
+        if(product == "more")
+            li.hot-product-item.mt-3
+                a(href="product-detail.html") 
+                    .card.p-3
+                        .row.no-gutters
+                            .col-5
+                                img.h-100(src=val.src, alt=src)
+                            .col-7
+                                .card-body
+                                    h5.card-title=val.name
+                                    .card-rate
+                                        ul.rate-list.d-flex.align-items-center
+                                            -var count=0+0.5;
+                                            while count < val.star
+                                                li.rate-item.mr-1
+                                                    i(class="fas fa-star")
+                                                - count++;
+                                                if(count == val.star)
+                                                    li.rate-item.mr-1
+                                                        i(class="fas fa-star-half")
+                                    .card-price.mt-3
+                                        span.price-sale.mr-3=val.price+" "+"đ"
+
+mixin productItemList()
+    each val in products
+        .col-12
+            .productlist__list.product-item.mt-3
+                .card.p-3
+                    .row.no-gutters
+                        .col-5
+                            img.h-100(src=val.src, alt="...")
+                        .col-7
+                            .card-body
+                                h5.card-title.text-left=val.name
+                                .card-rate
+                                    ul.rate-list.d-flex.align-items-center
+                                        -var count=0+0.5;
+                                        while count < val.star
+                                            li.rate-item.mr-1
+                                                i(class="fas fa-star")
+                                            - count++;
+                                            if(count == val.star)
+                                                li.rate-item.mr-1
+                                                    i(class="fas fa-star-half")
+                                .card-description.mt-3
+                                    span=val.des 
+                                .card-price.mt-3
+                                    span.price-sale.mr-3=val.price+" "+"đ"
+                                .button-group.mt-3.d-flex.align-items-center
+                                    a.btn.btn-full.rounded-pill(href="product-detail.html") MUA NGAY
+                                    +buttonIcon(iconBtn)
+
+mixin productInfo(product=[])
+    .py-3.product-info
+        each val in product
+            .product-item
+                .card-body
+                    h5.card-title.text-left=val.name
+                    .card-rate.py-4
+                        ul.rate-list.d-flex.align-items-center
+                            -var count=0+0.5;
+                            while count < val.star
+                                li.rate-item.mr-1
+                                    i(class="fas fa-star")
+                                - count++;
+                                if(count == val.star)
+                                    li.rate-item.mr-1
+                                        i(class="fas fa-star-half") 
+                    .card-price.border-bottom.py-4
+                        span.price-sale.mr-3=val.price+" "+"đ"
+                        span.price-cost.text-muted=val.pricesale+" "+"đ"
+                    .card-description.border-bottom.py-4
+                        span=val.des
+                    .button-count.py-4.border-bottom
+                        .btn-group.align-items-center
+                            +button("Giảm", "fas fa-minus")
+                            +input("number","",false)
+                            +button("Tăng", "fas fa-plus")
+                    .button-group.py-4.d-flex.align-items-center
+                        a.btn.btn-full.rounded-pill(href="product-detail.html") MUA NGAY
+                        +buttonIcon(iconBtn)

@@ -1,0 +1,44 @@
+mixin news(display = "grid", count = 3, list = newsList)
+    if(display == "grid")
+        each val, index in list
+            if(index < count)
+                .col-12.col-lg-4
+                    article.card.news-grid.mt-3
+                        .card-img
+                            img.card-img-top(src="./images/"+val.image, alt=val.image)
+                        .card-body
+                            time.time.text-muted=val.date
+                            span.card-title.d-block.mt-3=val.title
+                            p.card-des.text-muted=val.des
+                            a.d-block.mt-3.news-link.text-dark(href="news-detail.html") Đọc tiếp ...
+    if(display == "sidebar")
+        each val, index in list
+            if(index < count)
+                li.news-item.mt-3
+                    a(href="news-detail.html") 
+                        article.card.news-sidebar.py-3
+                            .row.no-gutters
+                                .col-4
+                                    img.h-100(src="./images/"+val.image, alt=val.image)
+                                .col-8
+                                    .card-body.pt-0.pr-0
+                                        h5.card-title=val.title 
+    if(display == "list")
+        each val, index in list
+            if(index < count)
+                article.news-content__item.news-list.mb-5 
+                    h5.news-content__title=val.title
+                    .button-group.mt-2.d-flex.align-items-center.flex-wrap
+                        div.inline-block.mr-5.mt-3 
+                            i.mr-2(class="far fa-calendar-minus")
+                            time=val.date
+                        div.inline-block.mr-5.mt-3
+                            i.mr-2(class="far fa-clock")
+                            time=val.time
+                        div.inline-block.mr-5.mt-3
+                            i.mr-2(class="far fa-comment-dots")
+                            span=val.comment
+                    .news-content__img.mt-4
+                        img(src="./images/"+val.image, alt=val.image)
+                    .news-content__des.mt-4 
+                        p=val.des

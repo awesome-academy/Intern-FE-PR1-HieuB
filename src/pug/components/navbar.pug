@@ -1,0 +1,17 @@
+mixin dropdownItem(name = "Action", url = "index.html")
+    a.dropdown-item.py-3(href=url)=name
+
+mixin navBar(name = "Home", url = "index.html", isActive = true, isDropDown = false, dropdownList = [{name:"", url:""}])
+    if(isActive)
+        li.nav-item.active.mr-4.py-3
+            a.nav-link.text-white(href=url)=name
+    else if(isDropDown)
+        li.nav-item.dropdown.mr-4.py-3
+            a.nav-link.text-white.dropdown-toggle#tabletDropdown(href=url, data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")=name
+            .dropdown-menu(aria-labelledby="tabletDropdown")
+                each val in dropdownList
+                    +dropdownItem(val.name,val.url)
+    else 
+        li.nav-item.mr-4.py-3
+            a.nav-link.text-white(href=url)=name
+    
