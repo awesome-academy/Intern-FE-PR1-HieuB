@@ -1,0 +1,29 @@
+extends ../base/default-layout
+
+block vars
+	-title = 'Hello everyone'
+	-bodyClass = 'login'
+	-des='Đây là project 1 loginn'
+
+block container
+	section.login.py-4
+		.container 
+			+breadCrumb([{name:"Trang chủ", url:"index.html"}, {name:"Đăng nhập", url:"login.html"}])
+			.row 
+				.col-12.col-md-6 
+					.section__title.mb-4.py-3
+						h2 THÔNG TIN CÁ NHÂN
+					form
+						+inputWithLabel("email", "", "EmailInput", "Email của bạn") 
+						+inputWithLabel("password", "", "PasswordInput", "Mật khẩu")
+						.d-flex.align-items-center.checbox-box 
+							+inputWithLabel("checkbox", "", "checkboxInput", "Ghi nhớ tài khoản")
+							a.forgot-password-link(href="") Bạn quên mật khẩu?
+						.form-group.mt-4 
+							a.btn.btn-full.rounded-pill(href="") ĐĂNG NHẬP  
+
+				.col-12.col-md-6 
+					.section__title.mb-4.py-3
+						h2 BẠN CHƯA CÓ TÀI KHOẢN
+					span.sub-title.d-block.py-3 Đăng ký tài khoản ngay để có thể mua hàng nhanh chóng và dễ dàng hơn. Ngoài ra còn có rất nhiều chính sách và ưu đãi
+					a.btn.btn-full.rounded-pill(href="register.html") ĐĂNG KÝ 
