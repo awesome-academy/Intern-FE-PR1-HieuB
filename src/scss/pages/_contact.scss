@@ -1,0 +1,52 @@
+section.contact {
+    .section__title {
+        border-bottom: none;
+
+        h2 {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .contact__brand-box {
+        @include minWidth($xs) {
+            .contact__brand-title,
+            .contact__brand-slogan {
+                text-align: left !important;
+            }
+        }
+
+        @include minWidth($md) {
+            .contact__contact {
+                display: block !important;
+            }
+        }
+
+        .contact__brand-title {
+            font-size: 3.8rem;
+            color: $primary-color;
+
+            span {
+                font-family: $ballet-font;
+            }
+        }
+
+        .contact__brand-slogan {
+            font-size: 1.8rem;
+            color: $gray-color;
+        }
+
+        .contact__brand-des {
+            font-size: 1.1rem;
+            line-height: 1.2;
+            color: $silver-color;
+        }
+
+        .footer__contact {
+            display: none;
+            font-size: 1.1rem;
+            color: $silver-color;
+        }
+    }
+}
